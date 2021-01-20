@@ -1,14 +1,16 @@
 # Genshin Impact Character Tracker
 A browser-based app for manually tracking your Genshin Impact characters and their stats, and for managing your in-game goals.
 
-# Purpose
+The purpose of this project is to have all your character information stored online, which you can bookmark or keep open in a tab, and which takes less time to load than the actual game itself. You can also aggregate your goals in your dashboard so that you can see which daily domains are relevant to your characters' ascensions and weapon ascensions, as well as keep track of which artifacts you have and need for your characters. No need to flip through pages of crossed out notes anymore! 
+
+# Background
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
 
 I also keep forgetting if I can use my resin (i.e. Genshion's stamina currency) on artifacts, or whether I should use them on today's ascension domains. 
 
 And I'll forget which specific artifacts I'm farming for each character (in order to fulfill artifact set bonuses): Whenever I see my domain drops, I have to find my physical list of artifacts so I can know whether I'm done running a domain or whether I should continue to do another run.
 
-The purpose of this project is to have all your character information stored online, which you can bookmark or keep open in a tab, and which takes less time to load than the actual game itself. You can also aggregate your goals in your dashboard so that you can see which daily domains are relevant to your characters' ascensions and weapon ascensions, as well as keep track of which artifacts you have and need for your characters. No need to flip through pages of crossed out notes anymore! 
+This app arose from the intersection of the pain points above, and the exigence below. 
 
 # Exigence 
 This app is my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) include:
