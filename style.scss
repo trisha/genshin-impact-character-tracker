@@ -1,0 +1,13 @@
+@font-face { font-family: Mermaid; src: url('./Mermaid-FontZillion/Fonts/mermaid1001.ttf'); }
+
+$header-color: navy;
+$header-font: Mermaid, sans-serif; 
+
+h1 {
+    font: header-font;
+    color: header-color;
+}
+
+h2 {
+    font: comic-sans;
+}
