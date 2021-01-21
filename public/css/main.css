@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Genshin-Font';
+  src: url("../Genshin.ttf") format("truetype");
+}
+
+h1 {
+  font-family: "Genshin-Font", sans-serif;
+  color: navy;
+}
+
+h2 {
+  font-family: "Genshin-Font", sans-serif;
+}
+/*# sourceMappingURL=main.css.map */

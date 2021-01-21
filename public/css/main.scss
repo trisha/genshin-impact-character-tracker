@@ -1,0 +1,16 @@
+@font-face { 
+    font-family: 'Genshin-Font'; 
+    src: url('../Genshin.ttf') format("truetype"); 
+}
+
+$header-color: navy;
+$header-font: 'Genshin-Font', sans-serif; 
+
+h1 {
+    font-family: $header-font;
+    color: $header-color;
+}
+
+h2 {
+    font-family: $header-font;
+}
