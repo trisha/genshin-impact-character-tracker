@@ -15,12 +15,14 @@ app.set('view engine', 'ejs')
 app.use(layouts)
 app.use(methodOverride('_method'))  // Needs to be placed above anything related to HTTP request objects, including body-parse middleware. 
 app.use(express.urlencoded({extended: false})) // Body-parser middleware.
-// app.use(express.static(__dirname + '/public')) // For being able to use CSS stylesheets. https://stackoverflow.com/questions/24582338/how-can-i-include-css-files-using-node-express-and-ejs
-
-app.use(express.static('public'))
+app.use(express.static('public')) // So we can use CSS stylesheets. 
 
 app.get('/', (req, res) => {
     res.render('main/index.ejs')
+})
+
+app.get('/*', (req, res) => {
+    res.render('main/404.ejs')
 })
 
 app.listen(3000, () => {
