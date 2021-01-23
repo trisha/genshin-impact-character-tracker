@@ -1,16 +1,42 @@
 @font-face { 
     font-family: 'Genshin-Font'; 
-    src: url('../Genshin.ttf') format("truetype"); 
+    src: url('../genshin.ttf') format("truetype"); 
 }
 
-$header-color: navy;
-$header-font: 'Genshin-Font', sans-serif; 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,300;1,600&display=swap');
 
-h1 {
+$background-color: #124454;
+$header-color: white;
+$header-font: 'Genshin-Font', sans-serif; 
+$div-translucent-color: #FFFFFFCC;
+
+body.layout {
+
+    background-attachment: fixed; // So background stays fixed when we scroll.
+    background-color: #124454;
+    background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0,0,0,.95)),
+        url("../img/genshin_28_4K.jpg"); // Source: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vh; // So that gradient covers the entire page. 
+    height: 100vh;
+
+    display: flex; // Center all of our child elements.
+    flex-direction: column;
+    align-items: center; // Centers horizontally because column.
+
+    font-family: 'Nunito';
+}
+
+div.translucent {
+    background-color: $div-translucent-color;
+}
+
+h1, h2, h3 {
     font-family: $header-font;
     color: $header-color;
 }
 
-h2 {
-    font-family: $header-font;
+h1 {
+    font-size: 38px;
 }

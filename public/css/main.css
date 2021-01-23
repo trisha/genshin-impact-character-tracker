@@ -1,14 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,300;1,600&display=swap");
 @font-face {
   font-family: 'Genshin-Font';
   src: url("../genshin.ttf") format("truetype");
 }
 
-h1 {
-  font-family: "Genshin-Font", sans-serif;
-  color: navy;
+body.layout {
+  background-attachment: fixed;
+  background-color: #124454;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(54, 112, 130, 0.9)), to(rgba(0, 0, 0, 0.95))), url("../img/genshin_28_4K.jpg");
+  background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0, 0, 0, 0.95)), url("../img/genshin_28_4K.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vh;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Nunito';
 }
 
-h2 {
+div.translucent {
+  background-color: #FFFFFFCC;
+}
+
+h1, h2, h3 {
   font-family: "Genshin-Font", sans-serif;
+  color: white;
+}
+
+h1 {
+  font-size: 38px;
 }
 /*# sourceMappingURL=main.css.map */
