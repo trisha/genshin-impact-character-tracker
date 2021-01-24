@@ -10,6 +10,8 @@ $header-color: white;
 $header-font: 'Genshin-Font', sans-serif; 
 $div-translucent-color: #FFFFFFCC;
 
+// How to add comments in .scss (first section): https://sass-lang.com/documentation/syntax/comments
+
 body.layout {
 
     background-attachment: fixed; // So background stays fixed when we scroll.
@@ -18,14 +20,17 @@ body.layout {
         url("../img/genshin_28_4K.jpg"); // Source: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vh; // So that gradient covers the entire page. 
+    width: 70vw; // So that gradient covers the entire page. 
     height: 100vh;
 
     display: flex; // Center all of our child elements.
     flex-direction: column;
     align-items: center; // Centers horizontally because column.
+    // justify-content: center; // Centers stuff vertically because of column.
 
     font-family: 'Nunito';
+
+    margin: 0 auto; // Centers child elements horizontally.
 }
 
 div.translucent {

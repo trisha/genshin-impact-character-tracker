@@ -11,7 +11,7 @@ body.layout {
   background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0, 0, 0, 0.95)), url("../img/genshin_28_4K.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vh;
+  width: 70vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,6 +24,7 @@ body.layout {
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Nunito';
+  margin: 0 auto;
 }
 
 div.translucent {
