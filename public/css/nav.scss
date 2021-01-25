@@ -1,0 +1,19 @@
+nav { // I want navigation links on left, and auth links on right.
+    display: grid;
+}
+
+nav ul.left {
+
+}
+
+nav ul.right {
+
+}
+nav li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+
+nav a {
+    color: white;
+}

@@ -1,0 +1,14 @@
+nav {
+  display: -ms-grid;
+  display: grid;
+}
+
+nav li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+nav a {
+  color: white;
+}
+/*# sourceMappingURL=nav.css.map */
