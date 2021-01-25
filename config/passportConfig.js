@@ -25,7 +25,7 @@ passport.deserializeUser((id, doneCallback) => {
 
 // -----------> STRATEGY SET UP <-----------
 const findAndLogInUser = (email, password, doneCallback) => {
-    db.user.findOne({where: {email: email}})
+    db.user.findOne({where: {email: email.toLowerCase()}})
     .then(async foundUser => {
         let match
         if (foundUser) {
@@ -36,10 +36,10 @@ const findAndLogInUser = (email, password, doneCallback) => {
             console.log("🐸Password was NOT validated, i.e. match is false")
             return doneCallback(null, false)
         } else { // User was legit.
-            return doneCallback(nulll, foundUser)
+            return doneCallback(null, foundUser)
         }
     })
-    .catch(err = doneCallback(err)) // The one time we don't put null as the first callback, since the first parameter is otherwise meant to receive an error.
+    .catch(err => doneCallback(err)) // The one time we don't put null as the first callback, since the first parameter is otherwise meant to receive an error.
 }
 
 

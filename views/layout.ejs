@@ -11,7 +11,26 @@
 </head>
 
 <body class="layout">
-    <h1>Layout Header</h1>
+    <header>
+        <nav>
+            <ul class="left">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/characters/collected">My Characters</a></li>
+                <li><a href="/characters/all">All Characters</a></li>
+            </ul>
+            <ul class="right">
+                <% if (!currentUser) { %>
+                <li class="right"><a href='/auth/signup'>Sign Up</a></li>
+                <li class="right"><a href='/auth/login'>Log In</a></li>
+                <% } else { %>
+                <li class="right"><a href='/auth/logout'>Log Out</a></li>
+                <li class="right"><a href='/profile'>Profile</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <%- include('partials/alerts.ejs') %>
     <%- body %>
 </body>
 </html>

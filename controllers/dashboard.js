@@ -4,7 +4,7 @@ const db = require('../models')
 const passport = require('../config/passportConfig.js') // Import module we coded.
 
 router.get('/', (req, res) => {
-    res.send("Dashboard page")
+    res.render('dashboard/index.ejs')
 })
 
 module.exports = router

@@ -41,6 +41,7 @@ router.get('/login', (req, res) => {
 
 // router.post with a res.redirect gets replaced by passport.
 router.post('/login', passport.authenticate('local', {
+    
     failureRedirect: '/auth/login',
     successRedirect: '/dashboard',
     successFlash: "You have been successfully logged in.",
