@@ -15,7 +15,10 @@ app.set('view engine', 'ejs')
 app.use(layouts)
 app.use(methodOverride('_method'))  // Needs to be placed above anything related to HTTP request objects, including body-parse middleware. 
 app.use(express.urlencoded({extended: false})) // Body-parser middleware.
-app.use(express.static('public')) // So we can use CSS stylesheets. 
+app.use(express.static('public')) // So we can use CSS stylesheets and local images. 
+
+// Controller middleware.
+app.use('/auth', require('./controllers/auth.js'))
 
 app.get('/', (req, res) => {
     res.render('main/index.ejs')
