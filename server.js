@@ -10,11 +10,11 @@ const ejs = require('ejs') // For embedded JavaScript.
 const methodOverride = require('method-override') // For PUT and DELETE requests.
 
 const session = require('express-session')
-// const passport = require('./config/passportConfig.js') // NEED TO CODE Separate to keep this file lean.
+const passport = require('./config/passportConfig.js') // NEED TO CODE Separate to keep this file lean.
 const flash = require('connect-flash')
 const isLoggedIn = require('./middleware/isLoggedIn.js') 
 
-// const db = require('./models') // For sequelize models once we create our models and databases.
+const db = require('./models') // For sequelize models once we create our models and databases.
 
 // Middleware
 app.set('view engine', 'ejs')
