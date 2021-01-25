@@ -11,15 +11,15 @@ router.get('/login', (req, res) => {
     res.render('auth/login.ejs')
 })
 
-router.get('signup', (req, res) => {
+router.get('/signup', (req, res) => {
     res.render('auth/signup.ejs')
 })
 
-router.post('signup', (req, res) => {
+router.post('/signup', (req, res) => {
     res.redirect('/auth/signup')
 })
 
-router.get('logout', (req, res) => {
+router.get('/logout', (req, res) => {
     res.render('auth/logout.ejs')
 })
 
