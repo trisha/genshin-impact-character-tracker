@@ -1,1 +1,22 @@
-Signup page
+<h1>Sign up for an account</h1>
+
+<form action='/auth/signup' method='POST' class='translucent'>
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type='text' name="name">
+    </div>
+
+    <div>
+        <label for="new-email">Email</label>
+        <input id="new-email" type='email' name="email">
+    </div>
+
+    <div>
+        <label for="new-password">Password</label>
+        <input id="new-password" type='password' name="password">
+    </div>
+
+    <div>
+        <input type='submit' value="Create New Account">    
+    </div>
+</form>
