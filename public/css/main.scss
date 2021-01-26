@@ -10,12 +10,6 @@ $header-color: white;
 $header-font: 'Genshin-Font', sans-serif; 
 $div-translucent-color: #FFFFFFCC;
 
-$cryo:;
-$dendro:;
-$hydro:;
-$geo:;
-$pyro:;
-
 // How to add comments in .scss (first section): https://sass-lang.com/documentation/syntax/comments
 
 body.layout {
@@ -59,7 +53,3 @@ h1 {
     font-size: 38px;
 }
 
-// For forms.
-select.geo {
-    color: grey;
-}

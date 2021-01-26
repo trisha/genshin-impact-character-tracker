@@ -1,31 +1,60 @@
 <head>
+    <!-- For bootstrap and bootstrap-select. -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS. -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- For color-coding based on vision (element). -->  
+    <link rel="stylesheet" type="text/css" href="../css/visions.css">
 </head>
 
 <h1>My Characters</h1>
 
 
 <div class="translucent" style="width:80%">
-
     
-    <form action='/characters/new' method='PUT'>
+    <form action='/characters/new' method='POST'>
         <label for="characters">Add Character/s:</label>
 
         <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
         <select class="selectpicker" id="characters" name="characters" title="Search for or select characters." multiple data-live-search="true" data-actions-box="true" data-width="60%">
             <optgroup label="5 Star Characters">
-                <option value="Albedo" class="geo">Albedo</option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
+                <option value="Albedo"         >Albedo</option>
+                <option value="Diluc"          >Diluc</option>
+                <option value="Ganyu"          >Ganyu</option>
+                <option value="Jean"           >Jean</option>
+                <option value="Keqing"         >Keqing</option>
+                <option value="Klee"           >Klee</option>
+                <option value="Mona"           >Mona</option>
+                <option value="Qiqi"           >Qiqi</option>
+                <option value="Tartaglia"      >Tartaglia</option>
+                <option value="Traveler: Anemo">Traveler: Anemo</option>
+                <option value="Traveler: Geo"  >Traveler: Geo</option>
+                <option value="Venti"          >Venti</option>
+                <option value="Xiao"           >Xiao</option>
+                <option value="Zhongli"        >Zhongli</option>
+
             </optgroup>
             <optgroup label="4 Star Characters">
-                <option value="WI">Wisconsin</option>
-                <option value="WY" class="geo" title="Zhongli">Zhongli</option>
-                <option disabled>Ketchup</option>
+                <option class="pyro"    value="Amber"    >Amber</option>
+                <option class="hydro"   value="Barbara"  >Barbara</option>
+                <option class="electro" value="Beidou"   >Beidou</option>
+                <option class="pyro"    value="Bennett"  >Bennett</option>
+                <option class="cryo"    value="Chongyun" >Chongyun</option>
+                <option class="cryo"    value="Diona"    >Diona</option>
+                <option class="electro" value="Fischl"   >Fischl</option>
+                <option class="cryo"    value="Kaeya"    >Kaeya</option>
+                <option class="electro" value="Lisa"     >Lisa</option>
+                <option class="geo"     value="Ningguang">Ningguang</option>
+                <option class="geo"     value="Noelle"   >Noelle</option>
+                <option class="electro" value="Razor"    >Razor</option>
+                <option class="anemo"   value="Sucrose"  >Sucrose</option>
+                <option class="pyro"    value="Xiangling">Xiangling</option>
+                <option class="hydro"   value="Xingqiu"  >Xingqiu</option>
+                <option class="pyro"    value="Xinyan"   >Xinyan</option>              
+
+                <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
+                <%# If we want this list to be based on the list of all current characters, use 'disabled' within EJS tags to disable something, and it'll either be an empty string or the string 'disabled'. %>
+                <%# <option disabled>Ketchup</option> %>
             </optgroup>
         </select>
     
