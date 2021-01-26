@@ -33,5 +33,10 @@ This app is my unit 2 project for General Assembly's Software Engineering Intens
 
 The above is why the local database is web-scraped (which took a while to calibrate) instead of manually populated.
 
+## Timeline
+1/20/21 - Found and added Genshin custom font
+1/21/21 - Added background and EJS layout scss, 404 page
+1/25/21 - Added login authentication, password hashing, flash messages, navbar, user and character models  
+
 ## Credit:
 
