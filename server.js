@@ -46,6 +46,7 @@ app.use((req, res, next) => {
 
 // Controller middleware.
 app.use('/auth', require('./controllers/auth.js'))
+app.use('/characters', require('./controllers/characters.js'))
 app.use('/dashboard', require('./controllers/dashboard.js'))
 
 

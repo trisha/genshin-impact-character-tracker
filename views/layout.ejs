@@ -7,14 +7,50 @@
     <title>Genshin Impact Tracker</title>
     <!-- Add favicon (below). https://www.digitalocean.com/community/tutorials/how-to-add-a-favicon-to-your-website-with-html -->
     <link rel="shortcut icon" type="image/png" href="/img/paimonPeek.png"> 
+
+    <!-- Multi-select dropdown plug-in.
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="/js/multi-select-dropdown/jquery.dropdown.css">
+    <script src="/js/multi-select-dropdown/jquery.dropdown.js"></script> -->
+
+    <!-- Semantic UI. 
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script> -->
     
 </head>
 
 <body class="layout">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <header>
         <%- include('partials/nav.ejs') %>
     </header>
     <%- include('partials/alerts.ejs') %>
     <%- body %>
+
+    <!-- <div class="demo">
+        <select style="display:none" name="" multiple>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="3" selected>Selected</option>
+            <option value="4" disabled>Disabled</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+
+
+    <script>
+    $('.demo').dropdown({
+        // options here
+
+    });
+    </script> -->
 </body>
 </html>

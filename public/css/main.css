@@ -29,6 +29,7 @@ body.layout {
 
 div.translucent {
   background-color: #FFFFFFCC;
+  border-radius: 5px;
 }
 
 h1, h2, h3 {
@@ -38,19 +39,5 @@ h1, h2, h3 {
 
 h1 {
   font-size: 38px;
-}
-
-nav {
-  display: -ms-grid;
-  display: grid;
-}
-
-nav li {
-  display: inline;
-  padding: 0px 10px 0px 10px;
-}
-
-nav a {
-  color: white;
 }
 /*# sourceMappingURL=main.css.map */
