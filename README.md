@@ -9,7 +9,7 @@ The purpose of this project is to have all your character information stored onl
 
 ## Project Planning:
 Entity Relationship Diagram: https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714
-Wireframes: 
+Wireframes: https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1
 
 ## Background:
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
@@ -36,7 +36,8 @@ The above is why the local database is web-scraped (which took a while to calibr
 ## Timeline
 1/20/21 - Found and added Genshin custom font
 1/21/21 - Added background and EJS layout scss, 404 page
-1/25/21 - Added login authentication, password hashing, flash messages, navbar, user and character models  
+1/23/21 - Minimized scope of project, added user model
+1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
 
 ## Credit:
 

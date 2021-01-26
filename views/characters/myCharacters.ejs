@@ -1,25 +1,36 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+</head>
+
 <h1>My Characters</h1>
 
-<div class="translucent">
-    Coming soon!
-</div>
 
-<div class="translucent">
+<div class="translucent" style="width:80%">
+
+    
     <form action='/characters/new' method='PUT'>
-        <label for="characters">Add a Character:</label>
+        <label for="characters">Add Character/s:</label>
 
+        <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
+        <select class="selectpicker" id="characters" name="characters" title="Search for or select characters." multiple data-live-search="true" data-actions-box="true" data-width="60%">
+            <optgroup label="5 Star Characters">
+                <option value="Albedo" class="geo">Albedo</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+            </optgroup>
+            <optgroup label="4 Star Characters">
+                <option value="WI">Wisconsin</option>
+                <option value="WY" class="geo" title="Zhongli">Zhongli</option>
+                <option disabled>Ketchup</option>
+            </optgroup>
+        </select>
+    
         <input type='submit' value="Add">
     </form>
 </div>
 
 
-
-
-<!-- <select class="ui fluid search dropdown" multiple="">
-    <option value="">State</option>
-    <option value="AL">Alabama</option>
-    <option value="AK">Alaska</option>
-    <option value="AZ">Arizona</option>
-    <option value="WI">Wisconsin</option>
-    <option value="WY">Wyoming</option>
-</select> -->

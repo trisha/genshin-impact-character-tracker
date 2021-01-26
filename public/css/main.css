@@ -28,6 +28,7 @@ body.layout {
 }
 
 div.translucent {
+  text-align: center;
   background-color: #FFFFFFCC;
   border-radius: 5px;
 }
