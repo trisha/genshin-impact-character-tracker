@@ -14,11 +14,19 @@ const getCharData = (charName) => {
     })
 }
 
+
+
 axios.get(charsEndpoint)
 .then(async chars => {
     let allCharsData = []
     let charData = await getCharData(chars.data[0])
     allCharsData.push(charData)
+
+    for(let i=1; i<chars.length; i++){
+        let charData = await getCharData(chars.data[i])
+        allCharsData.push(charData)
+    }
+
     console.log(allCharsData.length)
 })
 
