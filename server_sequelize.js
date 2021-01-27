@@ -10,7 +10,8 @@ sequelize model:create --name stockCharacter --attributes name:string,descriptio
 
 sequelize db:migrate
 
-DROP TABLE "stockCharacters";
+DROP TABLE "stockCharacters"; 
+// Double quotes used to escape capitalized letters.
 
 
 */ 
