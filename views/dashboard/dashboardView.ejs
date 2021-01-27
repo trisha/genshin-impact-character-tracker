@@ -2,7 +2,7 @@
 
 <div class="translucent">
     Text goes here
-
+    
 
     <form action='/dashboard/newgoal' method='POST'>
         <div class="width main">
@@ -10,11 +10,11 @@
             <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
             <%# Bootstrap-select options: https://developer.snapappointments.com/bootstrap-select/examples/ %>
             <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
-            <select class="selectpicker" id="characters" name="characters" title="Choose one of your characters." data-live-search="true" data-actions-box="true" data-width="60%" required>
+            <select class="selectpicker" id="characters" name="myCharId" title="Choose one of your characters." data-live-search="true" data-actions-box="true" data-width="60%" required>
                 <optgroup label="5 Star Characters">
                     <% myCharacters.forEach(character => { %>
                         <% if (character.rarity == 5) { %>
-                            <option value="<%= character.name %>"> <%= character.name %> </option>
+                            <option value="<%= character.id %>"> <%= character.name %> </option>
                         <% } %>
                     <% }) %>
                 </optgroup>
