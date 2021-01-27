@@ -53,3 +53,12 @@ h1 {
     font-size: 38px;
 }
 
+// Add transparent hover effect for image links.
+// https://www.w3schools.com/css/css_image_transparency.asp
+a img {
+    opacity: 1.0;
+}
+
+a img:hover {
+    opacity: 0.5;
+}

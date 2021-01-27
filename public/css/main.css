@@ -42,4 +42,11 @@ h1 {
   font-size: 38px;
 }
 
+a img {
+  opacity: 1.0;
+}
+
+a img:hover {
+  opacity: 0.5;
+}
 /*# sourceMappingURL=main.css.map */

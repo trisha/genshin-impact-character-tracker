@@ -20,7 +20,7 @@ module.exports = {
       vision: {
         type: Sequelize.STRING
       },
-      hexColor: {
+      weapon: {
         type: Sequelize.STRING
       },
       region: {

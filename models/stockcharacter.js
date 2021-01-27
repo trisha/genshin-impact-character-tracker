@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     rarity: DataTypes.INTEGER,
     vision: DataTypes.STRING,
-    hexColor: DataTypes.STRING,
+    weapon: DataTypes.STRING,
     region: DataTypes.STRING,
     ascStat: DataTypes.STRING,
     headUrl: DataTypes.TEXT,
