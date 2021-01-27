@@ -14,6 +14,9 @@ module.exports = {
       vision: {
         type: Sequelize.STRING
       },
+      rarity: {
+        type: Sequelize.INTEGER
+      },
       weapon: {
         type: Sequelize.STRING
       },

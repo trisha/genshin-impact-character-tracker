@@ -12,11 +12,12 @@
 
 <div class="translucent" style="width:80%">
     <ul class="character-container">
+
     <% myCharacters.forEach(character => { %>
         <%# <li style="list-style-image: url('/img/headshots/ character.name.toLowerCase() .png')"> %>
         <li>
             <div class="character-tile flex-row">
-                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png'> 
+                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='106px'> 
                 <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
                     
                     <div class="flex-col">
@@ -46,8 +47,6 @@
                 <option value="Mona"           >Mona</option>
                 <option value="Qiqi"           >Qiqi</option>
                 <option value="Tartaglia"      >Tartaglia</option>
-                <option value="Traveler: Anemo">Traveler: Anemo</option>
-                <option value="Traveler: Geo"  >Traveler: Geo</option>
                 <option value="Venti"          >Venti</option>
                 <option value="Xiao"           >Xiao</option>
                 <option value="Zhongli" title="Zhongli">Zhongli</option>

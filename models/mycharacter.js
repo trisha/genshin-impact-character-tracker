@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   myCharacter.init({
     name: DataTypes.STRING,
     vision: DataTypes.STRING,
+    rarity: DataTypes.INTEGER,
     weapon: DataTypes.STRING,
     level: DataTypes.INTEGER,
     maxLevel: DataTypes.INTEGER,
