@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.myCharacter.belongsTo(models.stockCharacter, {through: 'myStockChar'})
+      models.myCharacter.belongsTo(models.user)
+      models.myCharacter.belongsTo(models.stockCharacter)
       models.myCharacter.hasMany(models.goal)
     }
   };
@@ -24,7 +25,10 @@ module.exports = (sequelize, DataTypes) => {
     eLevel: DataTypes.INTEGER,
     qLevel: DataTypes.INTEGER,
     maxTalentLevel: DataTypes.INTEGER,
-    constellation: DataTypes.INTEGER
+    constellation: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
+    goalId: DataTypes.INTEGER,
+    stockCharacterId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'myCharacter',

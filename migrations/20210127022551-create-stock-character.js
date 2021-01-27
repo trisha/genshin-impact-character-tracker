@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('myCharacters', {
+    await queryInterface.createTable('stockCharacters', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,28 +11,34 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      description: {
+        type: Sequelize.TEXT
+      },
+      rarity: {
+        type: Sequelize.INTEGER
+      },
+      vision: {
+        type: Sequelize.STRING
+      },
       weapon: {
         type: Sequelize.STRING
       },
-      level: {
-        type: Sequelize.INTEGER
+      region: {
+        type: Sequelize.STRING
       },
-      maxLevel: {
-        type: Sequelize.INTEGER
+      ascStat: {
+        type: Sequelize.STRING
       },
-      aaLevel: {
-        type: Sequelize.INTEGER
+      headUrl: {
+        type: Sequelize.TEXT
       },
-      eLevel: {
-        type: Sequelize.INTEGER
+      portraitUrl: {
+        type: Sequelize.TEXT
       },
-      qLevel: {
-        type: Sequelize.INTEGER
+      wishUrl: {
+        type: Sequelize.TEXT
       },
-      maxTalentLevel: {
-        type: Sequelize.INTEGER
-      },
-      constellation: {
+      myCharacterId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -46,6 +52,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('myCharacters');
+    await queryInterface.dropTable('stockCharacters');
   }
 };

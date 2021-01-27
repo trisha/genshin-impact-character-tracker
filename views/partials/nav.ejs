@@ -13,8 +13,8 @@
     </ul>
     <ul class="right">
         <% if (!currentUser) { %>
-            <li class="right"><a href='/auth/signup'>Sign Up</a></li>
             <li class="right"><a href='/auth/login'>Log In</a></li>
+            <li class="right"><a href='/auth/signup'>Sign Up</a></li>
         <% } else { %>
             <li class="right"><a href='/profile'>My Profile</a></li>
             <li class="right"><a href='/auth/logout'>Log Out</a></li>

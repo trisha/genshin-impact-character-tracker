@@ -11,11 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.goal.belongsTo(models.myCharacter, {through: 'myCharGoal'})
+      models.goal.belongsTo(models.myCharacter)
     }
   };
   goal.init({
-    li: DataTypes.TEXT
+    li: DataTypes.TEXT,
+    myCharacterId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'goal',

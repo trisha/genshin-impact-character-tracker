@@ -1,6 +1,13 @@
 nav {
-  display: -ms-grid;
-  display: grid;
+  display: float;
+}
+
+nav ul.left {
+  grid-area: left;
+}
+
+nav ul.right {
+  grid-area: right;
 }
 
 nav li {

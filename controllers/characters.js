@@ -5,7 +5,13 @@ const passport = require('../config/passportConfig.js') // Import module we code
 
 router.get('/', (req, res) => {
     // let backName = req.user.name + ' Pan' (instead of res.locals.currentUser.name)
-    res.render('characters/myCharacters.ejs')
+    db.myCharacter.findAll({
+        where: {
+            userId: req.user.id
+        }
+    }).then(myCharacters => {
+        res.render('characters/myCharacters.ejs', {myCharacters: myCharacters})
+    })
 })
 
 router.get('/all', (req, res) => {
@@ -29,18 +35,27 @@ router.post('/new', (req, res) => {
         .then(([myNewChar, wasCreated]) => { // Returns char object and boolean true or false.
             db.stockCharacter.findOne({
                 where: {
-                    name: char.name
+                    name: myNewChar.name
                 }
             })
             .then(stockChar => {
                 stockChar.addMyCharacter(myNewChar)
-                console.log(`🙈Character: ${character.name} \n wasCreated: ${wasCreated}`)
+                console.log(`🙈Character: ${myNewChar.name} \n wasCreated: ${wasCreated}`)
             })
         })
-
-        
         res.redirect('/characters')
     }) 
+})
+
+router.delete('/delete/:idx', (req, res) => {
+    db.myCharacter.destroy({
+        where: {
+            userId: req.user.id,
+            id: req.params.idx
+        }
+    }).then(rowsDeleted => {
+        res.redirect('/characters')
+    })
 })
 
 module.exports = router

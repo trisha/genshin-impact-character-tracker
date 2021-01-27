@@ -1,12 +1,17 @@
 nav { // I want navigation links on left, and auth links on right.
+    // display: float;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "leftSide leftSide rightSide rightSide"
 
     ul.left {
-
+        grid-area: leftSide;
+        // float: left;
     }
 
     ul.right {
-
+        grid-area: rightSide;
+        // float: right;
     }
 
     li {

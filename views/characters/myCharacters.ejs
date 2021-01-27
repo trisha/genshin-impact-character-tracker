@@ -11,6 +11,17 @@
 
 
 <div class="translucent" style="width:80%">
+    <ul>
+    <% myCharacters.forEach(character => { %>
+        <li>
+            <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
+                <%= character.name %>
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+    <% }) %>
+    </ul>
+
     
     <form action='/characters/new' method='POST'>
         <label for="characters">Add Character(s):</label>

@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     ascStat: DataTypes.STRING,
     headUrl: DataTypes.TEXT,
     portraitUrl: DataTypes.TEXT,
-    wishUrl: DataTypes.TEXT
+    wishUrl: DataTypes.TEXT,
+    myCharacterId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'stockCharacter',
