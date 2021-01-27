@@ -43,8 +43,11 @@ router.post('/new', (req, res) => {
                 }
             })
             .then(async stockChar => {
+                console.log('🙈stockChar: ', stockChar)
                 myNewChar.vision = stockChar.vision
                 myNewChar.rarity = stockChar.rarity
+                myNewChar.save();
+                console.log('🙈 myNewChar: ', myNewChar)
                 await stockChar.addMyCharacter(myNewChar)
             })
         })
