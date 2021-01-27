@@ -2,11 +2,24 @@ const axios = require('axios')
 const express = require('express')
 const app = express()
 const db = require('./models')
-
 require('dotenv').config()
 const apiKey = process.env.API_KEY
-
 let charsEndpoint = 'https://api.genshin.dev/characters'
+
+const getCharData = (charName) => {
+    return axios.get(`https://api.genshin.dev/characters/${charName}`)
+    .then(response=>{
+        return response.data
+    })
+}
+
+axios.get(charsEndpoint)
+.then(async chars => {
+    let charData = await getCharData(chars.data[0])
+    console.log(charData)
+})
+
+
 
 
 /*
@@ -23,35 +36,35 @@ Promise.all([promise1, promise2, promise3]).then((values) => {
 */
 
 
-axios.get(charsEndpoint)
-.then(response => {
-    // response.data returns array of current characters, where each element is a string.
-    Promise.all(response.data.map(character => { // Call API for ea char. 
+// axios.get(charsEndpoint)
+// .then(response => {
+//     // response.data returns array of current characters, where each element is a string.
+//     Promise.all(response.data.map(character => { // Call API for ea char. 
         
         
-        charEndpoint = `${charsEndpoint}/${character}`
-        axios.get(charEndpoint) // Returns info on ea char.
-        .then(response => {
+//         charEndpoint = `${charsEndpoint}/${character}`
+//         axios.get(charEndpoint) // Returns info on ea char.
+//         .then(response => {
 
-            db.stockCharacter.findOrCreate({
-                where: {
-                    name: response.data.name, // Using .name because it's capitalized, but character isn't.
-                },
-                defaults: {
-                    description: response.data.description, 
-                    rarity: response.data.rarity,
-                    vision: response.data.vision,
-                    weapon: response.data.weapon                 
-                }
-            })
-            .then( ([char, wasCreated]) => { // Returns char object and boolean true or false.
-                console.log(`🙈Character: ${char.name} \n wasCreated: ${wasCreated}`)
-                process.exit()
-            })
+//             db.stockCharacter.findOrCreate({
+//                 where: {
+//                     name: response.data.name, // Using .name because it's capitalized, but character isn't.
+//                 },
+//                 defaults: {
+//                     description: response.data.description, 
+//                     rarity: response.data.rarity,
+//                     vision: response.data.vision,
+//                     weapon: response.data.weapon                 
+//                 }
+//             })
+//             .then( ([char, wasCreated]) => { // Returns char object and boolean true or false.
+//                 console.log(`🙈Character: ${char.name} \n wasCreated: ${wasCreated}`)
+//                 process.exit()
+//             })
 
-        })
-    }) )
-})
+//         })
+//     }) )
+// })
 
 
 /*
