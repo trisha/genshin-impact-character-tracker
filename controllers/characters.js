@@ -9,7 +9,10 @@ router.get('/', isLoggedIn, (req, res) => {
     db.myCharacter.findAll({
         where: {
             userId: req.user.id
-        }
+        },
+        order: [
+            ['name', 'ASC']
+        ]
     }).then(myCharacters => {
         res.render('characters/myCharacters.ejs', {myCharacters: myCharacters})
     })
