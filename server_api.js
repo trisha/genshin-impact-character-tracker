@@ -10,7 +10,7 @@ let charsEndpoint = 'https://api.genshin.dev/characters'
 
 // Added a delay between each forEach iteration. Source code: https://travishorn.com/delaying-foreach-iterations-2ebd4b29ad30
 const grabCharDetailsAndCreate = (character) => {
-    charEndpoint = `${charsEndpoint}/${character}`
+    charEndpoint = `https://api.genshin.dev/characters/${character}`
     axios.get(charEndpoint) // Returns info on ea char.
     .then(response => {
         db.stockCharacter.findOrCreate({
@@ -43,7 +43,11 @@ axios.get(charsEndpoint)
     response.data.forEach(delayLoop(grabCharDetailsAndCreate, 100))
 })
 
-
+// db.myCharacter.destroy({
+//     where: {
+//         userId: req.user.id, // Change to Id of user.
+//     }
+// })
 
 // Using Promise.all.
 /*

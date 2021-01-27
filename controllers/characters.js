@@ -2,8 +2,9 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const passport = require('../config/passportConfig.js') // Import module we coded.
+const isLoggedIn = require('../middleware/isLoggedIn.js')
 
-router.get('/', (req, res) => {
+router.get('/', isLoggedIn, (req, res) => {
     // let backName = req.user.name + ' Pan' (instead of res.locals.currentUser.name)
     db.myCharacter.findAll({
         where: {
@@ -24,8 +25,7 @@ router.get('/partial', (req, res) => {
 
 router.post('/new', (req, res) => {
     let characters = req.body.characters
-    console.log('🐹Selected characters: ', characters)
-    characters.forEach(character => {    
+    characters.forEach(character => { 
         db.myCharacter.findOrCreate({
             where: {
                 userId: req.user.id,
@@ -39,12 +39,12 @@ router.post('/new', (req, res) => {
                 }
             })
             .then(stockChar => {
+                myNewChar.vision = stockChar.vision
                 stockChar.addMyCharacter(myNewChar)
-                console.log(`🙈Character: ${myNewChar.name} \n wasCreated: ${wasCreated}`)
             })
         })
-        res.redirect('/characters')
     }) 
+    res.redirect('/characters')
 })
 
 router.delete('/delete/:idx', (req, res) => {

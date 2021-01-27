@@ -6,7 +6,7 @@ sequelize model:create --name user --attributes name:string,email:string,passwor
 // Associations: 
     models.stockCharacter.hasMany(models.myCharacter)
 
-sequelize model:create --name myCharacter --attributes name:string,weapon:string,level:integer,maxLevel:integer,aaLevel:integer,eLevel:integer,qLevel:integer,maxTalentLevel:integer,constellation:integer,userId:integer,goalId:integer,stockCharacterId:integer
+sequelize model:create --name myCharacter --attributes name:string,vision:string;weapon:string,level:integer,maxLevel:integer,aaLevel:integer,eLevel:integer,qLevel:integer,maxTalentLevel:integer,constellation:integer,userId:integer,goalId:integer,stockCharacterId:integer
 // Associations: 
     models.myCharacter.belongsTo(models.user)
     models.myCharacter.belongsTo(models.stockCharacter)

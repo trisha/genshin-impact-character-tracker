@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      vision: {
+        type: Sequelize.STRING
+      },
       weapon: {
         type: Sequelize.STRING
       },
