@@ -8,7 +8,7 @@
 $background-color: #124454;
 $header-color: white;
 $header-font: 'Genshin-Font', sans-serif; 
-$div-translucent-color: #FFFFFFCC;
+$div-translucent-color: #ffffffaa;
 
 // How to add comments in .scss (first section): https://sass-lang.com/documentation/syntax/comments
 
@@ -35,19 +35,30 @@ div.body {
     margin: 0 auto; // Centers child elements horizontally.
 }
 
+// So that form takes up width of body in dashboardView.ejs.
+div.width {
+    width: 80vw;
+}
+
 div.translucent {
     // display: flex;
     // flex-direction: column;
     // align-items: center;
-    // margin: 0 auto;
-    text-align: center;
-    
+    // margin: 0 auto;    
     background-color: $div-translucent-color;
     border-radius: 5px;
+    padding: 10px; 
+    text-align: center;
 }
 
 div.center {
     text-align: center;
+}
+
+// For putting 'Delete' button at bottom on dashboardView.ejs
+.bottom {
+    position: relative;
+    top: 10px;
 }
 
 h1, h2, h3 {

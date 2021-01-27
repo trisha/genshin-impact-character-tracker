@@ -21,8 +21,8 @@
                 <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
                     
                     <div class="flex-col">
-                        <%= character.name %>
-                        <input type="submit" value="Delete">
+                        <h3 class="<%= character.vision %>"><%= character.name %></h3>
+                        <input type="submit" value="Delete" style="width:65px;" class="bottom">
                     </div>
                 </form>
             </div>

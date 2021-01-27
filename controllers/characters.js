@@ -29,7 +29,7 @@ router.get('/partial', (req, res) => {
 router.post('/new', (req, res) => {
     let characters = req.body.characters
     if (typeof characters == 'string') { characters = [characters] } // Convert string to array so we can forEach on it.
-    characters.forEach(character => { 
+    characters.forEach(async character => { 
         db.myCharacter.findOrCreate({
             where: {
                 userId: req.user.id,
@@ -43,17 +43,16 @@ router.post('/new', (req, res) => {
                 }
             })
             .then(async stockChar => {
-                console.log('🙈stockChar: ', stockChar)
                 myNewChar.vision = stockChar.vision
                 myNewChar.rarity = stockChar.rarity
-                myNewChar.save();
-                console.log('🙈 myNewChar: ', myNewChar)
                 await stockChar.addMyCharacter(myNewChar)
+                await myNewChar.save()
             })
         })
     })
     // This is happening too soon; only some of my characters show up and then I have to refresh for all to show up.
-    res.redirect('/characters') 
+    function redirect() { res.redirect('/characters') }
+    setTimeout(redirect, 100)
 })
 
 router.delete('/delete/:idx', (req, res) => {

@@ -14,8 +14,7 @@ router.get('/', isLoggedIn, (req, res) => {
             ['name', 'ASC']
         ]
     }).then(myCharacters => {
-        console.log('🐣', myCharacters)
-        res.render('dashboard/index.ejs', {myCharacters: myCharacters})
+        res.render('dashboard/dashboardView.ejs', {myCharacters: myCharacters})
     })
 })
 

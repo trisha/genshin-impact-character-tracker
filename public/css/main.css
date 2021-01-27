@@ -32,14 +32,24 @@ div.body {
   margin: 0 auto;
 }
 
+div.width {
+  width: 80vw;
+}
+
 div.translucent {
-  text-align: center;
-  background-color: #FFFFFFCC;
+  background-color: #ffffffaa;
   border-radius: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 div.center {
   text-align: center;
+}
+
+.bottom {
+  position: relative;
+  top: 10px;
 }
 
 h1, h2, h3 {

@@ -38,6 +38,8 @@ The above is why the local database is web-scraped (which took a while to calibr
 1/21/21 - Added background and EJS layout scss, 404 page
 1/23/21 - Minimized scope of project, added user model
 1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
+1/26/21 - Populated stockCharacter model with API, added ability to add (via multi-select and search form) and delete (and view all) myCharacters on the /characters page, aligned links in the navigation bar.
+1/27/20 - Added multi-select form with myCharacter options to dashboard. 
 
 ## Credit:
 
