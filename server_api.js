@@ -6,6 +6,7 @@ require('dotenv').config()
 const apiKey = process.env.API_KEY
 let charsEndpoint = 'https://api.genshin.dev/characters'
 
+// gets the data about one character
 const getCharData = (charName) => {
     return axios.get(`https://api.genshin.dev/characters/${charName}`)
     .then(response=>{
@@ -15,11 +16,11 @@ const getCharData = (charName) => {
 
 axios.get(charsEndpoint)
 .then(async chars => {
+    let allCharsData = []
     let charData = await getCharData(chars.data[0])
-    console.log(charData)
+    allCharsData.push(charData)
+    console.log(allCharsData.length)
 })
-
-
 
 
 /*
