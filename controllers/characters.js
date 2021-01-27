@@ -28,7 +28,6 @@ router.get('/partial', (req, res) => {
 
 router.post('/new', (req, res) => {
     let characters = req.body.characters
-    if (req.body.characters == undefined) { res.redirect('/characters') }
     if (typeof characters == 'string') { characters = [characters] } // Convert string to array so we can forEach on it.
     characters.forEach(character => { 
         db.myCharacter.findOrCreate({

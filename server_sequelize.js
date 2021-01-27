@@ -38,3 +38,5 @@ db.stockCharacter.findOne({
 .then(stockChar => {
     console.log('🐷stockChar: ', stockChar)
 })
+
+// sequelize model:create --name testStockCharacter --attributes name:string,description:text,rarity:integer,vision:string,weapon:string,region:string,ascStat:string,headUrl:text,portraitUrl:text,wishUrl:text,myCharacterId:integer
