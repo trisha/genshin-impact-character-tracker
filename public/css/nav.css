@@ -1,16 +1,21 @@
 nav {
   display: float;
+  font-family: Nunito, sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 nav ul.left {
-  grid-area: left;
+  float: left;
 }
 
 nav ul.right {
-  grid-area: right;
+  float: right;
 }
 
 nav li {
+  background-color: #387283;
   display: inline;
   padding: 0px 10px 0px 10px;
 }

@@ -11,13 +11,20 @@
 
 
 <div class="translucent" style="width:80%">
-    <ul>
+    <ul class="character-container">
     <% myCharacters.forEach(character => { %>
+        <%# <li style="list-style-image: url('/img/headshots/ character.name.toLowerCase() .png')"> %>
         <li>
-            <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
-                <%= character.name %>
-                <input type="submit" value="Delete">
-            </form>
+            <div class="character-tile flex-row">
+                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png'> 
+                <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
+                    
+                    <div class="flex-col">
+                    <%= character.name %>
+                        <input type="submit" value="Delete">
+                    </div>
+                </form>
+            </div>
         </li>
     <% }) %>
     </ul>

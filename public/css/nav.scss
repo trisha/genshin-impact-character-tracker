@@ -1,20 +1,22 @@
 nav { // I want navigation links on left, and auth links on right.
-    // display: float;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "leftSide leftSide rightSide rightSide"
+    display: float;
+    font-family: Nunito, sans-serif;
+    
+    // Sticky element.
+    position: -webkit-sticky; // Safari.
+    position: sticky;
+    top: 0;
 
     ul.left {
-        grid-area: leftSide;
-        // float: left;
+        float: left;
     }
 
     ul.right {
-        grid-area: rightSide;
-        // float: right;
+        float: right;
     }
 
     li {
+        background-color: #387283;
         display: inline;
         padding: 0px 10px 0px 10px;
     }

@@ -13,23 +13,25 @@ $div-translucent-color: #FFFFFFCC;
 // How to add comments in .scss (first section): https://sass-lang.com/documentation/syntax/comments
 
 body.layout {
-
     background-attachment: fixed; // So background stays fixed when we scroll.
     background-color: #124454;
     background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0,0,0,.95)),
         url("../img/genshin_28_4K.jpg"); // Source: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0
     background-repeat: no-repeat;
     background-size: cover;
-    width: 80vw; // So that gradient covers the entire page. 
+}
+
+div.body {    
+    width: 85vw; // So that gradient covers the entire page. 
     height: 100vh;
 
     display: flex; // Center all of our child elements.
     flex-direction: column;
     align-items: center; // Centers horizontally because column.
     // justify-content: center; // Centers stuff vertically because of column.
-
-    font-family: 'Nunito';
-
+    background-color: #FFFFFF1A;
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
     margin: 0 auto; // Centers child elements horizontally.
 }
 
@@ -65,4 +67,37 @@ a img {
 
 a img:hover {
     opacity: 0.5;
+}
+
+// ul {
+//     list-style: none;
+// }
+
+// For myCharacters.ejs.
+ul.character-container {
+    list-style: none;
+    
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+// For login.ejs.
+.login {
+    width: 75px;
+    display: inline-block;
+}
+
+#login-button {
+    margin-top: 5px;
 }

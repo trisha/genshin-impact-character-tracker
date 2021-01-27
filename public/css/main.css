@@ -11,7 +11,10 @@ body.layout {
   background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0, 0, 0, 0.95)), url("../img/genshin_28_4K.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 80vw;
+}
+
+div.body {
+  width: 85vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +26,9 @@ body.layout {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Nunito';
+  background-color: #FFFFFF1A;
+  border-radius: 5px;
+  font-family: 'Nunito', sans-serif;
   margin: 0 auto;
 }
 
@@ -52,5 +57,47 @@ a img {
 
 a img:hover {
   opacity: 0.5;
+}
+
+ul.character-container {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login {
+  width: 75px;
+  display: inline-block;
+}
+
+#login-button {
+  margin-top: 5px;
 }
 /*# sourceMappingURL=main.css.map */
