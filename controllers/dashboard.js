@@ -21,7 +21,7 @@ router.get('/', isLoggedIn, (req, res) => {
                 where: {
                     myCharacterId: myChar.id
                 },
-                include: [db.myCharacter]
+                // include: [db.myCharacter]
             }).then(foundGoals => {
                 console.log('🐯 foundGoals: ', foundGoals, 'typeof foundGoals', typeof foundGoals, '🐯🐯')
                 // myChar.goals = foundGoals // We add this to our JavaScript object but don't save it to our SQL database.
@@ -58,7 +58,7 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
     // console.log('🐣 goal: ', req.body.goal)
     db.goal.create({
         myCharacterId: req.body.myCharId,
-        li: req.body.goal // li as in List Item.
+        li: req.body.goal, // li as in List Item.
         // userId: req.user.id
     }).then(goal => {
         db.myCharacter.findOne({where: {id: req.body.myCharId}})

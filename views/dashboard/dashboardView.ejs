@@ -21,26 +21,6 @@
     <% }) %>
 
 
-
-    <%# START OF NEW CODE %>
-    <form action="/goal/delete/?_method=DELETE" method="POST" id="deleteMyChar" name="characters">
-                    
-        <% myCharacters.forEach(character => { %>
-        <div class="flex-col">
-            <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
-            <h3 class="<%= character.vision %>"><%= character.name %></h3>
-            <input type="checkbox" id="<%= character.name %>" value="<%= character.id %>" style="width:65px;" class="bottom">
-            <label for="<%= character.name %>"><%= character.name %></label>
-        </div>
-        <% }) %>
-
-
-        <button type="submit" form="deleteMyChar">Delete</button>
-    </form>
-    <%# END OF NEW CODE %>
-
-
-
     <form action='/dashboard/goal/add' method='POST'>
         <div class="width main">
             <label for="characters">Character:</label>

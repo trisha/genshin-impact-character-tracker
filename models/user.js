@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.stockCharacter.hasMany(models.myCharacter)
+      models.user.hasMany(models.myCharacter)
+      models.user.hasMany(models.goal)
     }
   };
   user.init({
