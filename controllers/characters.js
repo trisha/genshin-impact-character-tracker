@@ -26,6 +26,7 @@ router.get('/partial', (req, res) => {
     res.render('partials/view.ejs')
 })
 
+// Add new character/s.
 router.post('/new', (req, res) => {
     let characters = req.body.characters
     if (typeof characters == 'string') { characters = [characters] } // Convert string to array so we can forEach on it.

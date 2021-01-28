@@ -12,7 +12,7 @@ sequelize model:create --name myCharacter --attributes name:string,vision:string
     models.myCharacter.belongsTo(models.stockCharacter)
     models.myCharacter.hasMany(models.goal)
 
-sequelize model:create --name goal --attributes li:text,myCharacterId:integer
+sequelize model:create --name goal --attributes li:text,myCharacterId:integer,userId:integer
 // Associations: 
     models.goal.belongsTo(models.myCharacter)
 
@@ -30,6 +30,7 @@ DELETE FROM table_name; ...to clear a table's contents but retain its schema.
 */ 
 const db = require('./models')
 
+/*
 db.stockCharacter.findOne({
     where: {
         name: 'Keqing'
@@ -37,6 +38,21 @@ db.stockCharacter.findOne({
 })
 .then(stockChar => {
     console.log('🐷stockChar: ', stockChar)
+})
+*/
+
+db.myCharacter.findAll({
+    where: {
+        userId: 1
+        // req.user.id
+    },
+    include: [db.goal]
+}).then(foundCharacters => {
+    forEachconsole.log('🐯 db.goal: ', db.goal)
+    // myChar.goals = foundGoals // We add this to our JavaScript object but don't save it to our SQL database.
+    // goal.charId = myChar.id
+    // goal.goals = foundGoals // I think this is an array.
+    
 })
 
 // sequelize model:create --name testStockCharacter --attributes name:string,description:text,rarity:integer,vision:string,weapon:string,region:string,ascStat:string,headUrl:text,portraitUrl:text,wishUrl:text,myCharacterId:integer
