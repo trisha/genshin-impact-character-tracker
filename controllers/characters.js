@@ -62,7 +62,14 @@ router.delete('/delete/:idx', (req, res) => {
             id: req.params.idx
         }
     }).then(rowsDeleted => {
-        res.redirect('/characters')
+        // Delete comments based on myCharacterId only AFTER verifying ownership of myChar.
+        db.goal.destroy({
+            where: {
+                myCharacterId: req.params.idx
+            }
+        }).then(rowsDeleted => {
+            res.redirect('/characters')
+        })
     })
 })
 
