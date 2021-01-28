@@ -1,10 +1,8 @@
 <h1>My Goals</h1>
 
-
 <%# START OF MULTISELECT DELETE SELECTED GOALS. %>
 <div class="translucent dashboard">
-
-    <form action="/dashboard/goal/delete/?_method=DELETE" method="POST" id="deleteGoals" name="deleteGoals">
+    <form method="POST" id="modifyGoals" name="modifyGoals" required>
                         
         <% myCharacters.forEach(character => { %>
         <div class="goal-wrapper translucent">
@@ -16,7 +14,7 @@
                 <% if (character.goals) { %>
                 <% character.goals.forEach(goal => { %>  
                     <p><li class="<%= character.vision %> li-align-left">
-                        <input class="form-check-input" type="checkbox" value="<%= goal.id %>" id="<%= goal.id %>" name="goalId" style="display:inline;">
+                        <input class="form-check-input" type="checkbox" id="<%= goal.id %>" name="goalId" value="<%= goal.id %>" style="display:inline;">
                         <label class="form-check-label" for="<%= goal.id %>"><%= goal.li %></label>
                     </li></p>
                 <% }) %>
@@ -24,8 +22,9 @@
             </ul>
         </div>
         <% }) %>
-        <%# <button type="submit" form="modifyGoals" name="editButton" value="edit" style="border-radius:5px;">Edit Selected Goals</button> %>
-        <button type="submit" form="deleteGoals" name="deleteButton" value="delete" style="border-radius:5px;">Delete Selected Goals</button>
+        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit/?_method=PUT" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal</button>
+        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/delete/?_method=DELETE" name="button" value="delete" style="border-radius:5px;">Delete Selected Goal(s)</button>
+    
     </form>
 <%# END OF MULTISELECT DELETE GOALS.%>
 
@@ -56,7 +55,7 @@
         </div>
         <div style="margin-top: 15px;">
             <label for="goal" style="vertical-align:top">Goal:</label>
-            <textarea id="goal" placeholder="Add notes here." value="" name="goal" rows="4" cols="50"></textarea>
+            <textarea id="goal" placeholder="Add notes here." name="goal" rows="4" cols="50"></textarea>
         </div>
         
         <div>

@@ -13,7 +13,7 @@ router.get('/', isLoggedIn, (req, res) => {
         include: [db.goal],
         order: [
             ['name', 'ASC'],
-            [db.goal, 'id', 'ASC']
+            [db.goal, 'id', 'ASC'] // How to apply order to includes: https://github.com/sequelize/sequelize/issues/4553
         ]
     }).then(myCharacters => {
         myCharacters.forEach((myChar, index) => {
@@ -31,29 +31,22 @@ router.get('/', isLoggedIn, (req, res) => {
     // Outside of my character.findAll
 })
 
-// 'Add a new goal' page.
-router.get('/goal/add', isLoggedIn, (req, res) => {
-    db.myCharacter.findAll({
-        where: {
-            userId: req.user.id
-        },
-        include: [db.goal],
-        order: [
-            ['name', 'ASC']
-        ]
-    }).then(myCharacters => {
-        res.render('dashboard/newGoal.ejs', {myCharacters: myCharacters})
-    })
-})
 
 // Select a character and add a new goal to it. 
 router.post('/goal/add', isLoggedIn, (req, res) => {
     // console.log('🐣 character: ', req.body.myCharId)
     // console.log('🐣 goal: ', req.body.goal)
-    db.goal.create({
+    // if (req.body.goal == "") { // If nothing is entered for the body of the goal.
+    //     res.redirect('/dashboard')
+    // }
+    if (req.body.goal === "") {
+        res.redirect('/dashboard') 
+    }
+    else {
+        db.goal.create({
         myCharacterId: req.body.myCharId,
         li: req.body.goal, // li as in List Item.
-        // userId: req.user.id
+        userId: req.user.id
     }).then(goal => {
         db.myCharacter.findOne({where: {id: req.body.myCharId}})
         .then(foundChar => {
@@ -62,39 +55,51 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
         })
     }).catch(err => { console.log(err) }) // If there's an error creating a goal.
     res.redirect('/dashboard') 
+    } // End of else.
 })
 
-router.get('/goaledit', isLoggedIn, (req, res) => {
-    db.myCharacter.findAll({
-        where: {
-            userId: req.user.id
-        },
-        include: [db.goal],
-        order: [
-            ['name', 'ASC']
-        ]
-    }).then(myCharacters => {
-        res.render('dashboard/editGoal.ejs', {myCharacters: myCharacters})
-    })
+// How to have two buttons for one form: https://stackoverflow.com/questions/547821/two-submit-buttons-in-one-form
+// Edit specified goal(s).
+router.put('/goal/edit', isLoggedIn, (req, res) => {
+    // Look up our comment.
+    // Verify that the user Id matches.
+    // If it does, then redirect to an edit comment page.
+
+    // Else, res.redirect('/dashboard')
+
+
+
+    // res.render('dashboard/editGoal.ejs')
+    if (req.body.goalId) { // If at least one item was selected.
+        res.send(req.body) // goal.id, character.id, character.name, character.vision
+    }
+    else {
+        res.redirect('/dashboard')
+    }
 })
 
 // Delete specified goal(s). 
 // How to get value of checkboxes: https://stackoverflow.com/questions/48398600/how-to-get-value-of-checkbox-in-express
 router.delete('/goal/delete', isLoggedIn, (req, res) => {
-    // req.body.goalId returns array of strings. If single entry, then returns just a string.
-    if (req.body.goalId) {
-        let goalIds = req.body.goalId
-        if (typeof goalIds == 'string') { goalIds = [goalIds] }
-        goalIds.forEach(goalId => {
-            db.goal.destroy({
-                where: {
-                    // userId: req.user.id,
-                    id: goalId
-                }
-            }).then(rowsDeleted => {
+    // console.log('🦀🦀Which button was pressed? ',req.body.button)
+    // console.log('🦄🦄req.body.Id: ', req.body.goalId) // Returns string if 1 entry, or array of strings if multiple.
+    if (req.body.goalId) { // If anything was selected.
+        if (req.body.button == 'delete') { // If delete button clicked.
+            let goalIds = req.body.goalId
+            if (typeof goalIds == 'string') { goalIds = [goalIds] }
+            goalIds.forEach(goalId => {
+                db.goal.destroy({
+                    where: {
+                        userId: req.user.id,
+                        id: goalId
+                    }
+                }).then(rowsDeleted => {
+                })
             })
-        })
-        res.redirect('/dashboard/')
+            // res.redirect('/dashboard/')
+            function redirect() { res.redirect('/dashboard') }
+            setTimeout(redirect, 100) // Need a delay because sometimes deleted comments don't disappear until you refresh the page.
+        } // End of delete route. 
     } else { res.redirect('/dashboard/') }
 })
 
