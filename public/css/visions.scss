@@ -5,11 +5,10 @@ $hydro: #438CD0;
 $geo: #DDB93B;
 $pyro: #E22323;
 
-form { 
-    .Anemo { color: $anemo; }
-    .Cryo { color: $cryo; }
-    .Electro { color: $electro; }
-    .Hydro { color: $hydro; }
-    .Geo { color: $geo; }
-    .Pyro { color: $pyro; }
-} 
+
+.Anemo { color: $anemo; }
+.Cryo { color: $cryo; }
+.Electro { color: $electro; }
+.Hydro { color: $hydro; }
+.Geo { color: $geo; }
+.Pyro { color: $pyro; }

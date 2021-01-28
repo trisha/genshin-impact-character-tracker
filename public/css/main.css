@@ -30,6 +30,7 @@ div.body {
   border-radius: 5px;
   font-family: 'Nunito', sans-serif;
   margin: 0 auto;
+  margin-bottom: 0;
 }
 
 div.width {
@@ -109,5 +110,20 @@ ul.character-container {
 
 #login-button {
   margin-top: 5px;
+}
+
+.border-bottom {
+  text-align: center;
+  width: 30vw;
+  border-bottom: 2px solid black;
+}
+
+.goal-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

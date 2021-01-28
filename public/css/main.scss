@@ -33,6 +33,7 @@ div.body {
     border-radius: 5px;
     font-family: 'Nunito', sans-serif;
     margin: 0 auto; // Centers child elements horizontally.
+    margin-bottom: 0;
 }
 
 // So that form takes up width of body in dashboardView.ejs.
@@ -111,4 +112,15 @@ ul.character-container {
 
 #login-button {
     margin-top: 5px;
+}
+
+// For dashboardView.ejs to add a horizontal rule underneath each char name (<h\> didn't work)
+.border-bottom {
+    text-align: center;
+    width: 30vw;
+    border-bottom: 2px solid black;
+}
+.goal-wrapper {
+    display: flex;
+    justify-content: center;
 }

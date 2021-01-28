@@ -10,27 +10,64 @@ router.get('/', isLoggedIn, (req, res) => {
         where: {
             userId: req.user.id
         },
+        include: [db.goal],
         order: [
             ['name', 'ASC']
         ]
     }).then(myCharacters => {
         myCharacters.forEach((myChar, index) => {
-            // Grab all the goals as well.
-            let goals = []
+            // Grab all the goals for each mycharacter.
             db.goal.findAll({
                 where: {
                     myCharacterId: myChar.id
-                }
+                },
+                include: [db.myCharacter]
             }).then(foundGoals => {
-                myChar.goals = foundGoals // We add this to our JavaScript object but don't save it to our SQL database.
+                console.log('🐯 foundGoals: ', foundGoals, 'typeof foundGoals', typeof foundGoals, '🐯🐯')
+                // myChar.goals = foundGoals // We add this to our JavaScript object but don't save it to our SQL database.
+                // goal.charId = myChar.id
+                // goal.goals = foundGoals // I think this is an array.
+                
             })
-        })
+            // console.log('🐴 myChar.goals: ', myChar.goals, '🐴🐴')
+        }) // Where the .forEach ends.
+        console.log('🦄 myCharacters: ', myCharacters, '🦄🦄')
         res.render('dashboard/dashboardView.ejs', {myCharacters: myCharacters})
-    })
+    }) // Where the .then ends 
+    // Outside of my character.findAll
 })
 
-// Select a character and add a new goal. 
-router.post('/newgoal', (req, res) => {
+
+/*
+
+<% myCharacters.forEach(character => { %>
+
+                <div class="character-tile flex-row">
+                    <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='106px'> 
+                    <h3 class="<%= character.vision %>"><%= character.name %></h3>
+                </div>
+
+                <%# Goals code previously went here. %>
+    <% }) %>
+
+*/
+/*
+
+<ul>
+                    <% if (goals && goals.length > 1) { %>
+                        <% goals.forEach(goal => { %>  
+                            <% if (goal.charId == character.id) { %>
+                                <li><%= goal.goals.li %></li>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                    </ul>
+                    
+
+*/
+
+// Select a character and add a new goal to it. 
+router.post('/goal/add', (req, res) => {
     // console.log('🐣 character: ', req.body.myCharId)
     // console.log('🐣 goal: ', req.body.goal)
     db.goal.create({
@@ -40,9 +77,13 @@ router.post('/newgoal', (req, res) => {
         db.myCharacter.findOne({where: {id: req.body.myCharId}})
         .then(foundChar => {
             foundChar.addGoal(goal)
+            // Do I need to update the goalId column in myCharacter? 
         })
     }).catch(err => { console.log(err) }) // If there's an error creating a goal.
     res.redirect('/dashboard') 
 })
+
+// Delete a specified goal. 
+router.post('/goal/delete')
 
 module.exports = router
