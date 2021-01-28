@@ -88,18 +88,20 @@ router.get('/goaledit', isLoggedIn, (req, res) => {
 // How to get value of checkboxes: https://stackoverflow.com/questions/48398600/how-to-get-value-of-checkbox-in-express
 router.delete('/goal/delete', isLoggedIn, (req, res) => {
     // req.body.goalId returns array of strings. If single entry, then returns just a string.
-    let goalIds = req.body.goalId
-    if (typeof goalIds == 'string') { goalIds = [goalIds] }
-    goalIds.forEach(goalId => {
-        db.goal.destroy({
-            where: {
-                // userId: req.user.id,
-                id: goalId
-            }
-        }).then(rowsDeleted => {
+    if (req.body.goalId) {
+        let goalIds = req.body.goalId
+        if (typeof goalIds == 'string') { goalIds = [goalIds] }
+        goalIds.forEach(goalId => {
+            db.goal.destroy({
+                where: {
+                    // userId: req.user.id,
+                    id: goalId
+                }
+            }).then(rowsDeleted => {
+            })
         })
-    })
-    res.redirect('/dashboard/goaledit')
+        res.redirect('/dashboard/goaledit')
+    } else { res.redirect('/dashboard/goaledit') }
 })
 
 module.exports = router
