@@ -115,15 +115,11 @@ ul.character-container {
 .border-bottom {
   text-align: center;
   width: 30vw;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid black !important;
 }
 
 .goal-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  border: 2px solid red !important;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

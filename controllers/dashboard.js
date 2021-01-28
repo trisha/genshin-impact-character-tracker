@@ -37,34 +37,20 @@ router.get('/', isLoggedIn, (req, res) => {
     // Outside of my character.findAll
 })
 
-
-/*
-
-<% myCharacters.forEach(character => { %>
-
-                <div class="character-tile flex-row">
-                    <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='106px'> 
-                    <h3 class="<%= character.vision %>"><%= character.name %></h3>
-                </div>
-
-                <%# Goals code previously went here. %>
-    <% }) %>
-
-*/
-/*
-
-<ul>
-                    <% if (goals && goals.length > 1) { %>
-                        <% goals.forEach(goal => { %>  
-                            <% if (goal.charId == character.id) { %>
-                                <li><%= goal.goals.li %></li>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                    </ul>
-                    
-
-*/
+// 'Add a new goal' page.
+router.get('/goal/add', isLoggedIn, (req, res) => {
+    db.myCharacter.findAll({
+        where: {
+            userId: req.user.id
+        },
+        include: [db.goal],
+        order: [
+            ['name', 'ASC']
+        ]
+    }).then(myCharacters => {
+        res.render('dashboard/newGoal.ejs', {myCharacters: myCharacters})
+    })
+})
 
 // Select a character and add a new goal to it. 
 router.post('/goal/add', (req, res) => {

@@ -1,24 +1,5 @@
-<h1>My Goals</h1>
-
+<h1>Add New Goal</h1>
 <div class="translucent">
-    <% myCharacters.forEach(character => { %>
-
-    <div class="goal-wrapper">
-        <div class="character-header border-bottom flex-row translucent">
-            <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
-            <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
-        </div>
-        <%# Goals code previously went here. %>
-
-        <ul>
-        <% if (character.goals) { %>
-        <% character.goals.forEach(goal => { %>  
-            <li class="<%= character.vision %>"><%= goal.li %></li>
-        <% }) %>
-        <% } %>
-        </ul>
-    </div> <%# End of goal wrapper. %>
-    <% }) %>
 
     <form action='/dashboard/goal/add' method='POST'>
         <div class="width main">
@@ -43,6 +24,7 @@
                 </optgroup>
             </select>
         </div>
+
         <div>
             <label for="goal" style="vertical-align:top">Goal:</label>
             <textarea id="goal" placeholder="Add notes here." value="" name="goal" rows="4" cols="50"></textarea>
@@ -52,5 +34,5 @@
             <input type='submit' value="Add New Goal to Character">
         </div>
     </form>
-    
+
 </div>
