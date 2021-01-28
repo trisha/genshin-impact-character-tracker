@@ -15,7 +15,6 @@ body.layout {
 
 div.body {
   width: 85vw;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,10 +32,6 @@ div.body {
   margin-bottom: 0;
 }
 
-div.width {
-  width: 80vw;
-}
-
 div.translucent {
   background-color: #ffffffaa;
   border-radius: 5px;
@@ -46,11 +41,6 @@ div.translucent {
 
 div.center {
   text-align: center;
-}
-
-.bottom {
-  position: relative;
-  top: 10px;
 }
 
 h1, h2, h3 {
@@ -103,6 +93,11 @@ ul.character-container {
           flex-direction: column;
 }
 
+.bottom {
+  position: relative;
+  top: 10px;
+}
+
 .login {
   width: 75px;
   display: inline-block;
@@ -112,14 +107,56 @@ ul.character-container {
   margin-top: 5px;
 }
 
-.border-bottom {
-  text-align: center;
-  width: 30vw;
-  border-bottom: 2px solid black !important;
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .goal-wrapper {
-  border: 2px solid red !important;
+  border: 2px solid #0f4150 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: .3em;
+  width: 80vw;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.goal-header {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-bottom: 2px solid #0f4150 !important;
   text-align: center;
+  min-width: 225px;
+  width: 35vw;
+}
+
+.goal-content {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  list-style: none;
+  width: 35vw;
+  min-width: 225px;
+  padding-left: 0;
+}
+
+.li-align-left {
+  text-align: left;
+}
+
+div.width {
+  width: 80vw;
 }
 /*# sourceMappingURL=main.css.map */

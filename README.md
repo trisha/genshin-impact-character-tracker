@@ -31,15 +31,15 @@ This app is my unit 2 project for General Assembly's Software Engineering Intens
 - Have semantically clean HTML, CSS, and back-end code
 - Be deployed online and accessible to the public
 
-The above is why the local database is web-scraped (which took a while to calibrate) instead of manually populated.
+The above is why the local database (stockCharacter) was seeded with an API (which took a while to calibrate) instead of manually populated.
 
 ## Timeline
 1/20/21 - Found and added Genshin custom font
 1/21/21 - Added background and EJS layout scss, 404 page
 1/23/21 - Minimized scope of project, added user model
 1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
-1/26/21 - Populated stockCharacter model with API, added ability to add (via multi-select and search form) and delete (and view all) myCharacters on the /characters page, aligned links in the navigation bar.
-1/27/20 - Added multi-select form with myCharacter options to dashboard. 
+1/26/21 - Populated stockCharacter model with API, added bootstrap-select multi-select+search form for adding user's characters, incorporated ability to view all and delete myCharacters on the /characters page, aligned link formatting in the navigation bar.
+1/27/20 - Added multi-select form with user-specific character options to dashboard page, added ability to add comments/notes for each user's specific characters and have them show up on the dashboard page, grouped by character.
 
 ## Credit:
 

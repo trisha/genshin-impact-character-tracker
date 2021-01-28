@@ -1,12 +1,3 @@
-<head>
-    <!-- For bootstrap and bootstrap-select. -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Latest compiled and minified CSS. -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <!-- For color-coding based on vision (element). -->  
-    <link rel="stylesheet" type="text/css" href="../css/visions.css">
-</head>
-
 <h1>My Characters</h1>
 
 
@@ -18,6 +9,7 @@
         <li>
             <div class="character-tile flex-row">
                 <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='106px'> 
+                <%# Form code for delete used to be here. %>
                 <form action="/characters/delete/<%= character.id %>/?_method=DELETE" method="POST">
                     
                     <div class="flex-col">
@@ -30,7 +22,6 @@
     <% }) %>
     </ul>
 
-    
     <form action='/characters/new' method='POST'>
         <label for="characters">Add Character(s):</label>
 

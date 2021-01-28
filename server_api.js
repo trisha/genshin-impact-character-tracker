@@ -43,13 +43,8 @@ axios.get(charsEndpoint)
     response.data.forEach(delayLoop(grabCharDetailsAndCreate, 100))
 })
 
-// db.myCharacter.destroy({
-//     where: {
-//         userId: req.user.id, // Change to Id of user.
-//     }
-// })
-
-// Using Promise.all.
+////////////////////////////////////////////////////////////
+// Example of how to use Promise.all in general.
 /*
 const promise1 = Promise.resolve(3);
 const promise2 = 42;
@@ -62,8 +57,9 @@ Promise.all([promise1, promise2, promise3]).then((values) => {
 });
 // expected output: Array [3, 42, "foo"]
 */
+////////////////////////////////////////////////////////////
 
-
+////////////////////////////////////////////////////////////
 // Below code works, but characters aren't added alphabetically.
 // Using Promise.all to iterate through each character and run an API call for each character.
 /*
@@ -94,7 +90,8 @@ axios.get(charsEndpoint)
 */
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Below code from Taylor is another way to have an async forEach, inspired by this article: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
+// Below code from Taylor is another way to have an async forEach
+// Inspired by this article: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
 /* 
 const asyncForEach = async (array, callback) => {
     for (let index = 0; index < array.length; index++) {

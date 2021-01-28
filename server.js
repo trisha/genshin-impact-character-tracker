@@ -44,6 +44,8 @@ app.use((req, res, next) => {
     next() // Move on to next piece of middleware (the ones we use, under the hood they include these as well)
 })
 
+// Can add DOM manipulation or add event listeners in this area. 
+
 // Controller middleware.
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/characters', require('./controllers/characters.js'))
@@ -58,7 +60,7 @@ app.get('/*', (req, res) => {
     res.render('main/404.ejs')
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Listening on port 3000")
 })
 
