@@ -30,6 +30,8 @@ div.body {
   font-family: 'Nunito', sans-serif;
   margin: 0 auto;
   margin-bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 80px;
 }
 
 div.translucent {
@@ -150,13 +152,20 @@ ul.character-container {
   width: 35vw;
   min-width: 225px;
   padding-left: 0;
+  padding-right: 0;
 }
 
 .li-align-left {
   text-align: left;
 }
 
-div.width {
+div.body-width {
   width: 80vw;
+}
+
+div.top-line-break {
+  margin-top: 50px;
+  border-top: 2px solid #0f4150;
+  padding-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */

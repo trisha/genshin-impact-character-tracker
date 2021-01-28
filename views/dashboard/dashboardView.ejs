@@ -1,10 +1,10 @@
 <h1>My Goals</h1>
 
 
-<%# START OF NEW CODE %>
+<%# START OF MULTISELECT DELETE SELECTED GOALS. %>
 <div class="translucent dashboard">
 
-    <form action="/dashboard/goal/delete/?_method=DELETE" method="POST" id="deleteGoals" name="deleteGoals" required>
+    <form action="/dashboard/goal/delete/?_method=DELETE" method="POST" id="deleteGoals" name="deleteGoals">
                         
         <% myCharacters.forEach(character => { %>
         <div class="goal-wrapper translucent">
@@ -24,14 +24,15 @@
             </ul>
         </div>
         <% }) %>
-        <button type="submit" form="deleteGoals" style="border-radius:5px;">Delete Selected Goals</button>
+        <%# <button type="submit" form="modifyGoals" name="editButton" value="edit" style="border-radius:5px;">Edit Selected Goals</button> %>
+        <button type="submit" form="deleteGoals" name="deleteButton" value="delete" style="border-radius:5px;">Delete Selected Goals</button>
     </form>
+<%# END OF MULTISELECT DELETE GOALS.%>
 
-<%# END OF NEW CODE %>
 
-
+<%# START OF ADD NEW NOTE TO CHARACTER. %>
     <form action='/dashboard/goal/add' method='POST'>
-        <div class="width main" style="margin-top:50px;border-top:2px solid #0f4150;padding-top:15px;" >
+        <div class="body-width top-line-break" >
             <label for="characters">Character:</label>
             <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
             <%# Bootstrap-select options: https://developer.snapappointments.com/bootstrap-select/examples/ %>
@@ -62,5 +63,6 @@
             <input type='submit' value="Add New Note to Character">
         </div>
     </form>
-    
+<%# END OF ADD NEW NOTE TO CHARACTER. %>    
+
 </div>

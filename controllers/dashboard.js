@@ -12,7 +12,8 @@ router.get('/', isLoggedIn, (req, res) => {
         },
         include: [db.goal],
         order: [
-            ['name', 'ASC']
+            ['name', 'ASC'],
+            [db.goal, 'id', 'ASC']
         ]
     }).then(myCharacters => {
         myCharacters.forEach((myChar, index) => {
@@ -20,18 +21,11 @@ router.get('/', isLoggedIn, (req, res) => {
             db.goal.findAll({
                 where: {
                     myCharacterId: myChar.id
-                },
+                }
                 // include: [db.myCharacter]
-            }).then(foundGoals => {
-                console.log('🐯 foundGoals: ', foundGoals, 'typeof foundGoals', typeof foundGoals, '🐯🐯')
-                // myChar.goals = foundGoals // We add this to our JavaScript object but don't save it to our SQL database.
-                // goal.charId = myChar.id
-                // goal.goals = foundGoals // I think this is an array.
-                
+            }).then(foundGoals => {    
             })
-            // console.log('🐴 myChar.goals: ', myChar.goals, '🐴🐴')
         }) // Where the .forEach ends.
-        console.log('🦄 myCharacters: ', myCharacters, '🦄🦄')
         res.render('dashboard/dashboardView.ejs', {myCharacters: myCharacters})
     }) // Where the .then ends 
     // Outside of my character.findAll
