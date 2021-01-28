@@ -100,8 +100,8 @@ router.delete('/goal/delete', isLoggedIn, (req, res) => {
             }).then(rowsDeleted => {
             })
         })
-        res.redirect('/dashboard/goaledit')
-    } else { res.redirect('/dashboard/goaledit') }
+        res.redirect('/dashboard/')
+    } else { res.redirect('/dashboard/') }
 })
 
 module.exports = router

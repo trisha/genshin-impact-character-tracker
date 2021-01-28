@@ -1,28 +1,37 @@
 <h1>My Goals</h1>
 
+
+<%# START OF NEW CODE %>
 <div class="translucent dashboard">
-    <% myCharacters.forEach(character => { %>
 
-    <div class="goal-wrapper translucent">
-        <div class="goal-header flex-row">
-            <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
-            <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
+    <form action="/dashboard/goal/delete/?_method=DELETE" method="POST" id="deleteGoals" name="deleteGoals" required>
+                        
+        <% myCharacters.forEach(character => { %>
+        <div class="goal-wrapper translucent">
+            <div class="goal-header flex-row">
+                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
+                <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
+            </div>
+            <ul class="goal-content form-check">
+                <% if (character.goals) { %>
+                <% character.goals.forEach(goal => { %>  
+                    <p><li class="<%= character.vision %> li-align-left">
+                        <input class="form-check-input" type="checkbox" value="<%= goal.id %>" id="<%= goal.id %>" name="goalId" style="display:inline;">
+                        <label class="form-check-label" for="<%= goal.id %>"><%= goal.li %></label>
+                    </li></p>
+                <% }) %>
+                <% } %>
+            </ul>
         </div>
-        <%# Goals code previously went here. %>
-
-        <ul class="goal-content">
-        <% if (character.goals) { %>
-        <% character.goals.forEach(goal => { %>  
-            <p><li class="<%= character.vision %> li-align-left"><%= goal.li %></li></p>
         <% }) %>
-        <% } %>
-        </ul>
-    </div> <%# End of goal wrapper. %>
-    <% }) %>
+        <button type="submit" form="deleteGoals" style="border-radius:5px;">Delete Selected Goals</button>
+    </form>
+
+<%# END OF NEW CODE %>
 
 
     <form action='/dashboard/goal/add' method='POST'>
-        <div class="width main">
+        <div class="width main" style="margin-top:50px;border-top:2px solid #0f4150;padding-top:15px;" >
             <label for="characters">Character:</label>
             <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
             <%# Bootstrap-select options: https://developer.snapappointments.com/bootstrap-select/examples/ %>
@@ -44,13 +53,13 @@
                 </optgroup>
             </select>
         </div>
-        <div>
+        <div style="margin-top: 15px;">
             <label for="goal" style="vertical-align:top">Goal:</label>
             <textarea id="goal" placeholder="Add notes here." value="" name="goal" rows="4" cols="50"></textarea>
         </div>
         
         <div>
-            <input type='submit' value="Add New Goal to Character">
+            <input type='submit' value="Add New Note to Character">
         </div>
     </form>
     
