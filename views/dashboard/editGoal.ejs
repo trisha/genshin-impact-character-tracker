@@ -2,17 +2,14 @@
 
 <div class="translucent dashboard">
 
-    <form method="POST" id="modifyGoals" name="modifyGoals" required>
-        
-        <% myCharacters.forEach(character => { %>
-            <div class="goal-wrapper translucent">                 
+    <form action ="/dashboard/goal/edit?_method=PUT" method="POST" id="editGoals" name="editGoals" required>
+        <div class="goal-wrapper translucent"> 
+        <% myCharacters.forEach(character => { %>      
     
                 <ul class="goal-content form-check">
                     <% if (character.goals) { %>
                         <% character.goals.forEach(goal => { %>  
-                            
-                            <% console.log('🐮', goalIds, goal.id) %>
-                            <% console.log((goalIds.includes(goal.id))) %>
+                
                             <% goalIds.forEach(goalId => { %>
 
                                 <% if (goalId == goal.id) { %>
@@ -22,19 +19,22 @@
                                     </div>
                                     
                                     <p><li class="<%= character.vision %> li-align-left">
-                                        <label for="goal"></label>
-                                        <textarea id="goal" value="<%= goal.li %>" name="goal" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
+                                        <input id="goalId" name="goalId" type="hidden" value="<%= goal.id %>">
+                                        
+                                        <label for="goalContent"></label>
+                                        <textarea id="goalContent" value="<%= goal.li %>" name="goalContent" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
                                     </li></p>
                                 <% } %> <%# End of 'if (goalId === goal.id %>
+
                             <% }) %> <%# End of 'goalIds.forEach %>
                         
                             <% }) %> <%# End of character.goals.forEach. %>
                     <% } %> <%# End of 'if (character.goals)' %>
                 </ul>
-            </div>
+            
         <% }) %> <%# End of myCharacters.forEach. %>
-        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit/?_method=PUT" name="button" value="edit" style="border-radius:5px;">Save Goals</button>
-    
+        </div>
+        <button type="submit" form="editGoals" name="button" value="edit" style="border-radius:5px;">Save Goals</button>
     </form>
     
 </div>

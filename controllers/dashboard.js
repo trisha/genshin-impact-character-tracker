@@ -62,7 +62,7 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
 // Get redirected to 'editGoal' page when selecting 'edit goals.'
 router.post('/goaledit', isLoggedIn, (req, res) => {
     let goalIds = req.body.goalId
-    console.log('🐥🐥🐥goalIds: ', goalIds)
+    // console.log('🐥🐥🐥goalIds: ', goalIds) // Returns either a string or an array of strings, if a value was selected.
     if (goalIds) { // If at least one item was selected.
         if (typeof goalIds == 'string') { 
             goalIds = [goalIds] 

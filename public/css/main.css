@@ -11,6 +11,7 @@ body.layout {
   background-image: linear-gradient(rgba(54, 112, 130, 0.9), rgba(0, 0, 0, 0.95)), url("../img/genshin_28_4K.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 50px;
 }
 
 div.body {
