@@ -1,13 +1,15 @@
 @font-face { 
     font-family: 'Genshin-Font'; 
-    src: public-url('genshin.ttf') format("truetype"); 
+    src: url('../genshin.ttf') format("truetype"); 
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
+// font-family: 'Fraunces', serif;
 
 $background-color: #124454;
 $header-color: white;
-$header-font: 'Genshin-Font', sans-serif; 
+$header-font: 'Genshin-Font', 'Fraunces', sans-serif; 
 $div-translucent-color: #ffffffaa;
 $dark-teal: #0f4150;
 
@@ -88,12 +90,15 @@ a img:hover {
 // }
 
 ///////// For myCharacters.ejs. ///////////////////////////
-ul.character-container {
+ul.characters-container {
     list-style: none;
     
     display: flex; 
     flex-direction: row;
     flex-wrap: wrap;
+}
+.character-tile {
+    width: 400px; // Need to change this to be percentage based, 1/3 of characters-container.
 }
 .flex-row { // Used in characterDetail.ejs as well.
     display: flex;
