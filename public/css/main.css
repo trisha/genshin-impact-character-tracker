@@ -4,6 +4,10 @@
   src: url("../genshin.ttf") format("truetype");
 }
 
+.dark-teal {
+  color: #0f4150;
+}
+
 body.layout {
   background-attachment: fixed;
   background-color: #124454;
@@ -101,6 +105,26 @@ ul.character-container {
   top: 10px;
 }
 
+.align-left {
+  text-align: left;
+}
+
+.border-TR {
+  border-top-right-radius: 0px;
+}
+
+.border-BR {
+  border-bottom-right-radius: 0px;
+}
+
+.border-TL {
+  border-top-left-radius: 0px;
+}
+
+.border-BL {
+  border-bottom-left-radius: 0px;
+}
+
 .login {
   width: 75px;
   display: inline-block;
@@ -133,7 +157,6 @@ ul.character-container {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: .5em;
-  width: 40vw;
   -ms-flex-item-align: center;
       align-self: center;
 }
@@ -145,6 +168,7 @@ ul.character-container {
   border-bottom: 2px solid #0f4150 !important;
   text-align: center;
   min-width: 225px;
+  max-width: 400px;
   width: 35vw;
 }
 
@@ -155,6 +179,7 @@ ul.character-container {
   list-style: none;
   width: 35vw;
   min-width: 225px;
+  max-width: 400px;
   padding-left: 0;
   padding-right: 0;
 }

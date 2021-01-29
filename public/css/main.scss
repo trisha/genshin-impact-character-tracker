@@ -11,6 +11,10 @@ $header-font: 'Genshin-Font', sans-serif;
 $div-translucent-color: #ffffffaa;
 $dark-teal: #0f4150;
 
+.dark-teal {
+    color: $dark-teal;
+}
+
 // How to add comments in .scss (first section): https://sass-lang.com/documentation/syntax/comments
 
 body.layout {
@@ -42,7 +46,7 @@ div.body {
 div.translucent {   
     background-color: $div-translucent-color;
     border-radius: 5px;
-    padding: 10px; 
+    padding: 10px; // Sometimes this is making things off-center.
     text-align: center;
 }
 
@@ -81,17 +85,34 @@ ul.character-container {
     flex-direction: row;
     flex-wrap: wrap;
 }
-.flex-row {
+.flex-row { // Used in characterDetail.ejs as well.
     display: flex;
     flex-direction: row;
 }
-.flex-col {
+.flex-col { // Used in characterDetail.ejs as well.
     display: flex;
     flex-direction: column;
 }
 .bottom { // For putting 'Delete' button at bottom on dashboardView.ejs
     position: relative;
     top: 10px;
+}
+.align-left { // For aligning text to left instead of centered.
+    text-align: left;
+}
+/////////////////////////////////////////////////////////////////////////////////
+///////////// For characterDetail.ejs ////////////////////////////////////
+.border-TR {
+    border-top-right-radius: 0px;
+}
+.border-BR {
+    border-bottom-right-radius: 0px;
+}
+.border-TL {
+    border-top-left-radius: 0px;
+}
+.border-BL {   
+    border-bottom-left-radius: 0px;
 }
 
 // For login.ejs.
@@ -117,7 +138,6 @@ ul.character-container {
     display: flex;
     flex-direction: column;
     margin: .5em;
-    width: 40vw; 
     align-self: center;
 }
 .goal-header {
@@ -125,6 +145,7 @@ ul.character-container {
     border-bottom: 2px solid $dark-teal !important;
     text-align: center;
     min-width: 225px;
+    max-width: 400px;
     width: 35vw;
 }
 .goal-content {
@@ -132,6 +153,7 @@ ul.character-container {
     list-style: none;
     width: 35vw; 
     min-width: 225px;   
+    max-width: 400px;
     padding-left: 0;
     padding-right: 0;
     // margin-left: -5em;

@@ -79,9 +79,15 @@ router.delete('/delete/:idx', (req, res) => {
     })
 })
 
-/*
-
-*/
+router.get('/view/:name', (req, res) => {
+    db.stockCharacter.findOne({
+        where: {
+            name: req.params.name
+        }
+    }).then(character => {
+        res.render('characters/characterDetail.ejs', {char: character})    
+    })
+})
 
 
 module.exports = router

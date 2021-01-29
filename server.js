@@ -20,6 +20,7 @@ app.use(require('express-ejs-layouts'))
 app.use(methodOverride('_method'))  // Needs to be placed above anything related to HTTP request objects, including body-parse middleware. 
 app.use(express.urlencoded({extended: false})) // Body-parser middleware.
 app.use(express.static('public')) // So we can use CSS stylesheets and local images. 
+// or app.use(express.static(__dirname + '/public'))
 
 
 // Session middleware (the documentation told us to do this)

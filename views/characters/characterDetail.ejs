@@ -1,5 +1,17 @@
-<h1><em>Name of Character (Placeholder)</em></h1> 
+<h1><%= char.name %></h1> 
 
-<div class="translucent">
-    Coming soon!
+<div class="translucent body-width flex-row">
+    
+    <div class="translucent border-TR border-BR">
+        <img src='/img/portraits/<%= char.name %>.png'>
+    </div>
+
+    <div class="flex-col translucent border-TL border-BL">
+        
+        <div class="align-left">
+            <h3 class="<%= char.vision %>"><%= char.description %></h3>
+            </div>
+        </div>
+
+        
 </div>

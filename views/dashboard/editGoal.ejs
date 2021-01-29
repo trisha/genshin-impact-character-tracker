@@ -3,7 +3,7 @@
 <div class="translucent dashboard">
 
     <form action ="/dashboard/goal/edit?_method=PUT" method="POST" id="editGoals" name="editGoals" required>
-        <div class="goal-wrapper translucent"> 
+        <div class="goal-wrapper translucent body-width"> 
         <% myCharacters.forEach(character => { %>      
     
                 <ul class="goal-content form-check">
@@ -22,7 +22,7 @@
                                         <input id="goalId" name="goalId" type="hidden" value="<%= goal.id %>">
                                         
                                         <label for="goalContent"></label>
-                                        <textarea id="goalContent" value="<%= goal.li %>" name="goalContent" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
+                                        <textarea class="<%= character.vision %> goal-content" id="goalContent" value="<%= goal.li %>" name="goalContent" rows="4"><%= goal.li %></textarea>
                                     </li></p>
                                 <% } %> <%# End of 'if (goalId === goal.id %>
 
