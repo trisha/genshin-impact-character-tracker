@@ -1,11 +1,11 @@
 <% if (alerts.error) { %>
     <% alerts.error.forEach(msg => { %>
-        <%= msg %>
+        <span style="color:white;font-style:italic;"><%= msg %></span>
     <% }) %>
 <% } %>
 
 <% if (alerts.success) { %>
     <% alerts.success.forEach(msg => { %>
-        <%= msg %>
+        <span style="color:white;"><%= msg %></span>
     <% }) %>
 <% } %>

@@ -54,6 +54,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logout() // Passport
+    req.flash('success',"You have been successfully logged out.") 
     res.redirect('/')
 })
 

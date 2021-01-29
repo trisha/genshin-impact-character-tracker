@@ -36,13 +36,10 @@ router.get('/', isLoggedIn, (req, res) => {
 router.post('/goal/add', isLoggedIn, (req, res) => {
     // console.log('🐣 character: ', req.body.myCharId)
     // console.log('🐣 goal: ', req.body.goal)
-    // if (req.body.goal == "") { // If nothing is entered for the body of the goal.
-    //     res.redirect('/dashboard')
-    // }
-    if (req.body.goal === "") {
+    if (req.body.goal === "") { // Don't want user to add empty string as a goal.
         res.redirect('/dashboard') 
     }
-    else {
+    else if (req.body.goal) {
         db.goal.create({
         myCharacterId: req.body.myCharId,
         li: req.body.goal, // li as in List Item.
@@ -55,20 +52,35 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
         })
     }).catch(err => { console.log(err) }) // If there's an error creating a goal.
     res.redirect('/dashboard') 
-    } // End of else.
+    } // End of else if.
+    else { res.redirect('/dashboard') }
 })
 
 // How to have two buttons for one form: https://stackoverflow.com/questions/547821/two-submit-buttons-in-one-form
 // Edit specified goal(s).
+
+// Get redirected to 'editGoal' page when selecting 'edit goals.'
+router.get('/goaledit', isLoggedIn, (req, res) => {
+    let goals = req.body.goalId
+    if (goals) { // If at least one item was selected.
+        if (typeof req.body.goalId == 'string') {
+
+        }
+        res.render('/dashboard/editGoal.ejs', {goals: goals})
+    }
+    else {
+        res.redirect('/dashboard')
+    }
+})
+
+
+// Edit goals when submitting from 'editGoal' page.
 router.put('/goal/edit', isLoggedIn, (req, res) => {
     // Look up our comment.
     // Verify that the user Id matches.
     // If it does, then redirect to an edit comment page.
 
     // Else, res.redirect('/dashboard')
-
-
-
     // res.render('dashboard/editGoal.ejs')
     if (req.body.goalId) { // If at least one item was selected.
         res.send(req.body) // goal.id, character.id, character.name, character.vision
