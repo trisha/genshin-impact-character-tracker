@@ -1,17 +1,23 @@
-<h1><%= char.name %></h1> 
+<h1>Character View</h1>
 
 <div class="translucent body-width flex-row">
     
     <div class="translucent border-TR border-BR">
-        <img src='/img/portraits/<%= char.name %>.png'>
+        <img src='/img/portraits/<%= char.name %>.png' class="flexible">
     </div>
 
     <div class="flex-col translucent border-TL border-BL">
         
         <div class="align-left">
-            <h3 class="<%= char.vision %>"><%= char.description %></h3>
-            </div>
+            <h1 class="<%= char.vision %> text-shadow big-font"><%= char.name %></h1> 
+            <h5 class="dark-teal"><%= char.description %></h5>
+            
+            <p><h5 class="<%= char.vision %> inline">Vision:</h5> <%= char.vision %></p>
+            <p><h5 class="<%= char.vision %> inline">Rarity:</h5> <%= char.rarity %></p>
+            <p><h5 class="<%= char.vision %> inline">Weapon:</h5> <%= char.weapon %></p>
         </div>
+        
+    </div>
 
         
 </div>

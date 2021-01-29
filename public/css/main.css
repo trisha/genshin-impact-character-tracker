@@ -59,6 +59,15 @@ h1 {
   font-size: 38px;
 }
 
+.big-font {
+  font-size: 5vw;
+}
+
+text-shadow {
+  text-shadow: #FC0 1px 1px 10px !important;
+  margin-right: -4px;
+}
+
 a img {
   opacity: 1.0;
 }
@@ -109,20 +118,29 @@ ul.character-container {
   text-align: left;
 }
 
+.inline {
+  display: inline;
+}
+
+.flexible {
+  max-width: 100%;
+  height: auto;
+}
+
 .border-TR {
-  border-top-right-radius: 0px;
+  border-top-right-radius: 0px !important;
 }
 
 .border-BR {
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px !important;
 }
 
 .border-TL {
-  border-top-left-radius: 0px;
+  border-top-left-radius: 0px !important;
 }
 
 .border-BL {
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px !important;
 }
 
 .login {

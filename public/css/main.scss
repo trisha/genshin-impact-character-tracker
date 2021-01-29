@@ -42,7 +42,6 @@ div.body {
     padding-bottom: 80px;
 }
 
-
 div.translucent {   
     background-color: $div-translucent-color;
     border-radius: 5px;
@@ -61,6 +60,18 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 38px;
+}
+.big-font {
+    font-size: 5vw;
+}
+.description-font {
+    
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
+text-shadow {
+    text-shadow: #FC0 1px 1px 10px !important;
+    margin-right: -4px;
 }
 
 // Add transparent hover effect for image links.
@@ -100,19 +111,26 @@ ul.character-container {
 .align-left { // For aligning text to left instead of centered.
     text-align: left;
 }
+.inline {
+    display: inline;
+}
+.flexible { // For flexible character portraits in characterDetail.ejs
+    max-width:100%;
+    height: auto;
+}
 /////////////////////////////////////////////////////////////////////////////////
 ///////////// For characterDetail.ejs ////////////////////////////////////
 .border-TR {
-    border-top-right-radius: 0px;
+    border-top-right-radius: 0px !important;
 }
 .border-BR {
-    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px !important;
 }
 .border-TL {
-    border-top-left-radius: 0px;
+    border-top-left-radius: 0px !important;
 }
 .border-BL {   
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px !important;
 }
 
 // For login.ejs.
