@@ -23,6 +23,7 @@ sequelize model:create --name stockCharacter --attributes name:string,descriptio
     models.stockCharacter.hasMany(models.myCharacter)
 
 sequelize db:migrate
+sequelize db:migrate:undo (Run this command in your VSCode terminal as many times as you need to; models get migrated one by one.)
 
 /////////////////////// SQL SHORTCUTS /////////////////////////////
 DROP TABLE "stockCharacters"; ...to delete a table. Double quotes to escape capitalized letters, where SQL otherwise only accepts single quotes in commands.
@@ -56,5 +57,3 @@ db.myCharacter.findAll({
     // goal.goals = foundGoals // I think this is an array.
     
 })
-
-// sequelize model:create --name testStockCharacter --attributes name:string,description:text,rarity:integer,vision:string,weapon:string,region:string,ascStat:string,headUrl:text,portraitUrl:text,wishUrl:text,myCharacterId:integer

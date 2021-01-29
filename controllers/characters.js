@@ -79,13 +79,19 @@ router.delete('/delete/:idx', (req, res) => {
     })
 })
 
+const axios = require('axios')
 router.get('/view/:name', (req, res) => {
     db.stockCharacter.findOne({
         where: {
             name: req.params.name
         }
     }).then(character => {
-        res.render('characters/characterDetail.ejs', {char: character})    
+        let endpoint = `https://api.genshin.dev/characters/${character.name}`
+        axios.get(endpoint) // Returns info on ea char.
+    .then(response => {
+        let talents = response.data.skillTalents
+        res.render('characters/characterDetail.ejs', {char: character, talents: talents})    
+    })    
     })
 })
 
