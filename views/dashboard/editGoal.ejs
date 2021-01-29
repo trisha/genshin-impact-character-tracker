@@ -5,25 +5,29 @@
     <form method="POST" id="modifyGoals" name="modifyGoals" required>
                         
         <% myCharacters.forEach(character => { %>
-        <div class="goal-wrapper translucent">
-            <div class="goal-header flex-row">
-                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
-                <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
+            <div class="goal-wrapper translucent">
+                
+                <ul class="goal-content form-check">
+                    <% if (character.goals) { %>
+                        <% character.goals.forEach(goal => { %>  
+                            
+                            <% if (goalIds.includes(goal.id)) { %>
+                            <div class="goal-header flex-row">
+                                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
+                                <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
+                            </div>
+                            
+                            <p><li class="<%= character.vision %> li-align-left">
+                                <label for="goal"></label>
+                                <textarea id="goal" value="<%= goal.li %>" name="goal" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
+                            </li></p>
+                            <% } %> <%# End of 'if (goalIds.includes(goal.id))' %>
+                        <% }) %> <%# End of character.goals.forEach. %>
+                    <% } %> <%# End of 'if (character.goals)' %>
+                </ul>
             </div>
-            <ul class="goal-content form-check">
-                <% if (character.goals) { %>
-                <% character.goals.forEach(goal => { %>  
-                    <p><li class="<%= character.vision %> li-align-left">
-                        <input class="form-check-input" type="checkbox" id="<%= goal.id %>" name="goalId" value="<%= goal.id %>" style="display:inline;">
-                        <label class="form-check-label" for="<%= goal.id %>"><%= goal.li %></label>
-                    </li></p>
-                <% }) %>
-                <% } %>
-            </ul>
-        </div>
-        <% }) %>
-        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit/?_method=PUT" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal</button>
-        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/delete/?_method=DELETE" name="button" value="delete" style="border-radius:5px;">Delete Selected Goal(s)</button>
+        <% }) %> <%# End of myCharacters.forEach. %>
+        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit/?_method=PUT" name="button" value="edit" style="border-radius:5px;">Save Goals</button>
     
     </form>
     

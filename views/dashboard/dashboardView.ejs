@@ -22,11 +22,13 @@
             </ul>
         </div>
         <% }) %>
-        <button type="submit" form="modifyGoals" formaction="/dashboard/goaledit/?_method=GET" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal</button>
+        <button type="submit" form="modifyGoals" formaction="/dashboard/goaledit" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal</button>
         <button type="submit" form="modifyGoals" formaction="/dashboard/goal/delete/?_method=DELETE" name="button" value="delete" style="border-radius:5px;">Delete Selected Goal(s)</button>
     
     </form>
 <%# END OF MULTISELECT DELETE GOALS.%>
+<%# Need to add modal/popup for delete confirmation: %>
+<%# https://stackoverflow.com/questions/46767664/simple-express-ejs-modal %>
 
 
 <%# START OF ADD NEW NOTE TO CHARACTER. %>

@@ -60,15 +60,25 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
 // Edit specified goal(s).
 
 // Get redirected to 'editGoal' page when selecting 'edit goals.'
-router.get('/goaledit', isLoggedIn, (req, res) => {
-    let goals = req.body.goalId
-    if (goals) { // If at least one item was selected.
-        if (typeof req.body.goalId == 'string') {
-
-        }
-        res.render('/dashboard/editGoal.ejs', {goals: goals})
-    }
-    else {
+router.post('/goaledit', isLoggedIn, (req, res) => {
+    let goalIds = req.body.goalId
+    console.log('🐥🐥🐥goalIds: ', goalIds)
+    if (goalIds) { // If at least one item was selected.
+        if (typeof goalIds == 'string') { goalIds == [goalIds] } // Convert string to array of strings.
+        
+        db.myCharacter.findAll({
+            where: {
+                userId: req.user.id
+            },
+            include: [db.goal],
+            order: [
+                ['name', 'ASC'],
+                [db.goal, 'id', 'ASC'] // How to apply order to includes: https://github.com/sequelize/sequelize/issues/4553
+            ]
+        }).then(myCharacters => {
+            res.render('dashboard/editGoal.ejs', {myCharacters: myCharacters, goalIds: goalIds})
+        })
+    } else {
         res.redirect('/dashboard')
     }
 })
