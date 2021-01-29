@@ -38,6 +38,12 @@ https://genshin-impact.herokuapp.com/
 - Passport (for user authentication)
 - Bcrypt (for password hashing)
 
+## Next Steps
+- Update Characters view  to match Figma wireframes
+- Add ability to enter character stats (ATK, DEF, HP, etc.)  
+- Add weapon slot and domain information 
+- Aggregate domain information on dashboard, depending on the day 
+
 ## Contact: 
 Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inquiries!
 
@@ -45,6 +51,7 @@ Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inqui
 
 ## Project Planning:
 Entity Relationship Diagram: https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714
+
 Wireframes: https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1
 Inspiration: 
 - https://genshin.gg/
@@ -53,15 +60,20 @@ Inspiration:
 - https://www.genshingamer.com/
 
 ## Timeline
+Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress timeline. 
 1/20/21 - Found and added Genshin custom font
-1/21/21 - Added background and EJS layout scss, 404 page
-1/23/21 - Minimized scope of project, added user model
-1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
-1/26/21 - Populated stockCharacter model with API (removed a process.exit() that was causing it to terminate prematurely), added bootstrap-select multi-select+search form for adding user's characters, incorporated ability to view all and delete myCharacters on the /characters page, aligned link formatting in the navigation bar.
 
-This night was my most stressful night of the GA SEI, because I was going crazy trying to figure out what about the code I just wrote was causing everything to break. Turns out, what was working before wasn't working anymore (I made the mistake of ruling it out from my mind), and prior, it was essentially luck that my poorly-written code wasn't breaking--I was redirecting back to the /characters page before my forEach was done running and adding all my new characters. 
-1/27/20 - Added multi-select form with user-specific character options to dashboard page, added ability to add comments/notes for each user's specific characters and have them show up on the dashboard page, grouped by character. Got stuck on this for a few hours because I didn't include the db.comment high enough when trying to findAll myCharacters.
-1/28/20 - Added ability to bulk edit or bulk delete comments from dashboard view. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.
+1/21/21 - Added background and EJS layout scss, 404 page  
+
+1/23/21 - Minimized scope of project, added user model  
+
+1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models    
+
+1/26/21 - Populated stockCharacter model with API, added bootstrap-select multi-select+search form for adding characters, incorporated ability to view all and delete characters, aligned link formatting in the navigation bar. 
+
+1/27/20 - Added multi-select form with user's characters to dashboard page, added ability to add comments/notes for each character, and display them grouped by character
+
+1/28/20 - Added ability to bulk edit or bulk delete comments using the same form. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.  
 
 ## Screenshots
 My Characters view:
@@ -73,13 +85,7 @@ My Goals view:
 Add Goal view:
 ![Add Goal Screenshot](public/img/screenshots/Add_Goal_2021-01-29.png)
 Edit Goals view:
-![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png)
-
-## Next Steps
-- Update Characters view 
-- Add ability to enter character stats (ATK, DEF, HP, etc.)
-- Add weapon slot and domain information 
-- Aggregate domain information on dashboard, depending on the day
+![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png) 
 
 ## Background:
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
@@ -91,8 +97,8 @@ And I'll forget which specific artifacts I'm farming for each character (in orde
 This app arose from the intersection of the pain points above, and the exigence below. 
 
 ## Exigence: 
-This app is my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) include:
-- Have at least 2 models (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.
+This app is my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) include:  
+- Have at least 2 models (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.  
 - Include sign up/log in functionality, with hashed passwords & an authorization flow
 - Incorporate at least one API. Examples include Yelp, Tumblr, Facebook, and others on Mashape. Maybe grab an API from this list of free APIs
 - Have complete RESTful routes for at least one of your resources with GET, POST, PUT, and DELETE
@@ -102,6 +108,5 @@ This app is my unit 2 project for General Assembly's Software Engineering Intens
 - Be deployed online and accessible to the public
 
 ## Credit:
-Character information API: https://github.com/genshindev/api
+Character information API: https://github.com/genshindev/api  
 Background image: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0 
-
