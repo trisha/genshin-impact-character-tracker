@@ -1,3 +1,5 @@
+$dark-teal: #0f4150;
+
 nav { // I want navigation links on left, and auth links on right.
     display: float;
     font-family: Nunito, sans-serif;
@@ -17,11 +19,23 @@ nav { // I want navigation links on left, and auth links on right.
 
     li {
         background-color: #387283;
+        border-radius: 3px;
         display: inline;
         padding: 0px 10px 0px 10px;
+        // text-shadow:rgb(86, 203, 223) 1px 1px 10px !important;
+    }
+    li:hover {
+        opacity: 0.5;
+        color: rgb(152, 247, 198);
+        text-decoration: underline;
     }
 
     a {
         color: white;
+    }
+    a:hover {
+        color: rgb(152, 247, 198);
+        opacity: 1 !important;
+        
     }
 }

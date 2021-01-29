@@ -16,11 +16,23 @@ nav ul.right {
 
 nav li {
   background-color: #387283;
+  border-radius: 3px;
   display: inline;
   padding: 0px 10px 0px 10px;
 }
 
+nav li:hover {
+  opacity: 0.5;
+  color: #98f7c6;
+  text-decoration: underline;
+}
+
 nav a {
   color: white;
+}
+
+nav a:hover {
+  color: #98f7c6;
+  opacity: 1 !important;
 }
 /*# sourceMappingURL=nav.css.map */
