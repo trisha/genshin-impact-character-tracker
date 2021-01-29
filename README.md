@@ -64,3 +64,11 @@ This night was my most stressful night of the GA SEI, because I was going crazy 
 
 ## Credit:
 
+# Features
+- Sequelize hook to convert email address before validating 
+- Password hashing using bcrypt
+- Local login authentication using passport
+- Multi-select and search from a dynamic dropdown list when adding characters
+- Multi-select edit and delete character comments
+- Dynamic CSS: see what happens when you adjust your browser size 👀
+- Colored text dependent on each character's vision (element)
