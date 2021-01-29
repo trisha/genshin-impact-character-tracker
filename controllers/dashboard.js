@@ -50,8 +50,8 @@ router.post('/goal/add', isLoggedIn, (req, res) => {
             foundChar.addGoal(goal)
             // Do I need to update the goalId column in myCharacter? 
         })
+        res.redirect('/dashboard') 
     }).catch(err => { console.log(err) }) // If there's an error creating a goal.
-    res.redirect('/dashboard') 
     } // End of else if.
     else { res.redirect('/dashboard') }
 })
@@ -64,8 +64,9 @@ router.post('/goaledit', isLoggedIn, (req, res) => {
     let goalIds = req.body.goalId
     console.log('🐥🐥🐥goalIds: ', goalIds)
     if (goalIds) { // If at least one item was selected.
-        if (typeof goalIds == 'string') { goalIds == [goalIds] } // Convert string to array of strings.
-        
+        if (typeof goalIds == 'string') { 
+            goalIds = [goalIds] 
+        } 
         db.myCharacter.findAll({
             where: {
                 userId: req.user.id

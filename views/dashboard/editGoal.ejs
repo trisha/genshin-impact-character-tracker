@@ -3,26 +3,32 @@
 <div class="translucent dashboard">
 
     <form method="POST" id="modifyGoals" name="modifyGoals" required>
-                        
+        
         <% myCharacters.forEach(character => { %>
-            <div class="goal-wrapper translucent">
-                
+            <div class="goal-wrapper translucent">                 
+    
                 <ul class="goal-content form-check">
                     <% if (character.goals) { %>
                         <% character.goals.forEach(goal => { %>  
                             
-                            <% if (goalIds.includes(goal.id)) { %>
-                            <div class="goal-header flex-row">
-                                <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
-                                <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
-                            </div>
-                            
-                            <p><li class="<%= character.vision %> li-align-left">
-                                <label for="goal"></label>
-                                <textarea id="goal" value="<%= goal.li %>" name="goal" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
-                            </li></p>
-                            <% } %> <%# End of 'if (goalIds.includes(goal.id))' %>
-                        <% }) %> <%# End of character.goals.forEach. %>
+                            <% console.log('🐮', goalIds, goal.id) %>
+                            <% console.log((goalIds.includes(goal.id))) %>
+                            <% goalIds.forEach(goalId => { %>
+
+                                <% if (goalId == goal.id) { %>
+                                    <div class="goal-header flex-row">
+                                        <img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='40px' height='40px' style="margin-top: -5px;margin-right:6px;"> 
+                                        <h3 style="vertical-align:bottom;color: #0f4150"><%= character.name %></h3>
+                                    </div>
+                                    
+                                    <p><li class="<%= character.vision %> li-align-left">
+                                        <label for="goal"></label>
+                                        <textarea id="goal" value="<%= goal.li %>" name="goal" rows="4" cols="50" class="<%= character.vision %>"><%= goal.li %></textarea>
+                                    </li></p>
+                                <% } %> <%# End of 'if (goalId === goal.id %>
+                            <% }) %> <%# End of 'goalIds.forEach %>
+                        
+                            <% }) %> <%# End of character.goals.forEach. %>
                     <% } %> <%# End of 'if (character.goals)' %>
                 </ul>
             </div>
