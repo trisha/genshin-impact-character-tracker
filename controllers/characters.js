@@ -14,7 +14,12 @@ router.get('/', isLoggedIn, (req, res) => {
             ['name', 'ASC']
         ]
     }).then(myCharacters => {
-        res.render('characters/myCharacters.ejs', {myCharacters: myCharacters})
+
+        db.stockCharacter.findAll({
+        }).then(stockCharacters => {
+            res.render('characters/myCharacters.ejs', {myCharacters: myCharacters, stockCharacters: stockCharacters})
+        })
+        
     })
 })
 

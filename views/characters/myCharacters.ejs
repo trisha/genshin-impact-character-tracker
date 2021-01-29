@@ -26,7 +26,25 @@
 
         <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
         <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
+        
         <select class="selectpicker" id="characters" name="characters" title="Search for or select characters." multiple data-live-search="true" data-actions-box="true" data-width="60%" required>
+            <optgroup label="5 Star Characters">
+                <% stockCharacters.forEach(character => { %>
+                    <% if (character.rarity == 5) { %>
+                        <option value="<%= character.name %>"> <%= character.name %> </option>
+                    <% } %>
+                <% }) %>
+            </optgroup>
+            <optgroup label="4 Star Characters">
+                <% stockCharacters.forEach(character => { %>
+                    <% if (character.rarity == 4) { %>
+                        <option value="<%= character.name %>"> <%= character.name %> </option>
+                    <% } %>
+                <% }) %>
+            </optgroup>
+        </select>
+        
+        <!-- <select class="selectpicker" id="characters" name="characters" title="Search for or select characters." multiple data-live-search="true" data-actions-box="true" data-width="60%" required>
             <optgroup label="5 Star Characters">
                 <option value="Albedo"         >Albedo</option>
                 <option value="Diluc"          >Diluc</option>
@@ -62,7 +80,7 @@
                 <%# If we want this list to be based on the list of all current characters, use 'disabled' within EJS tags to disable something, and it'll either be an empty string or the string 'disabled'. %>
                 <%# <option disabled>Ketchup</option> %>
             </optgroup>
-        </select>
+        </select> -->
     
         <input type='submit' value="Add">
     </form>

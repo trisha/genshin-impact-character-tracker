@@ -2,6 +2,12 @@
 
 <%# START OF MULTISELECT DELETE SELECTED GOALS. %>
 <div class="translucent dashboard">
+    <% if (!myCharacters || myCharacters.length <= 0) { %>
+        <div style="margin:50px;">
+            Add your characters <a href='/characters'>here</a> in order to add, edit, or delete character-specific comments!
+        </div>
+    <% } %>
+    
     <form method="POST" id="modifyGoals" name="modifyGoals" required>
                         
         <% myCharacters.forEach(character => { %>
@@ -38,7 +44,7 @@
             <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
             <%# Bootstrap-select options: https://developer.snapappointments.com/bootstrap-select/examples/ %>
             <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
-            <select class="selectpicker" id="characters" name="myCharId" title="Choose one of your characters." data-live-search="true" data-actions-box="true" data-width="60%" required>
+            <select class="selectpicker" id="characters" name="myCharId" title="Search for or select one of your characters." data-live-search="true" data-actions-box="true" data-width="60%" required>
                 <optgroup label="5 Star Characters">
                     <% myCharacters.forEach(character => { %>
                         <% if (character.rarity == 5) { %>
@@ -55,9 +61,9 @@
                 </optgroup>
             </select>
         </div>
-        <div style="margin-top: 15px;">
-            <label for="goal" style="vertical-align:top">Goal:</label>
-            <textarea id="goal" placeholder="Add notes here." name="goal" rows="4" cols="50"></textarea>
+        <div class="add-note-wrapper">
+            <label for="goal" style="vertical-align:top"><span class="transparent">____</span>Goal:</label>
+            <textarea id="goal" placeholder="Add notes here." name="goal" class="add-notes" rows="4" cols="60"></textarea>
         </div>
         
         <div>

@@ -90,15 +90,28 @@ router.put('/goal/edit', isLoggedIn, (req, res) => {
     // Look up our comment.
     // Verify that the user Id matches.
     // If it does, then redirect to an edit comment page.
+    let ids = req.body.goalId
+    let contents = req.body.goalContent
 
-    // Else, res.redirect('/dashboard')
-    // res.render('dashboard/editGoal.ejs')
-    if (req.body.goalId) { // If at least one item was selected.
-        res.send(req.body) // goal.id, character.id, character.name, character.vision
+    if (!ids) { res.redirect('/dashboard')} // If no values to submit.
+
+    if (typeof ids == 'string') { // If only one value.
+        ids = [ids]
+        contents = [contents]
     }
-    else {
-        res.redirect('/dashboard')
-    }
+    ids.forEach( (id, index) => {
+        db.goal.findOne({
+            where: {
+                id: id,
+                userId: req.user.id 
+            }
+        }).then(foundGoal => {
+            foundGoal.li = contents[index]
+            foundGoal.save()
+        })
+    }) // End of forEach.
+    function redirect() { res.redirect('/dashboard') }
+    setTimeout(redirect, 100)  
 })
 
 // Delete specified goal(s). 

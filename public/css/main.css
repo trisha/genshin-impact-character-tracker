@@ -118,6 +118,9 @@ ul.character-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .goal-wrapper {
@@ -129,8 +132,8 @@ ul.character-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: .3em;
-  width: 80vw;
+  margin: .5em;
+  width: 40vw;
   -ms-flex-item-align: center;
       align-self: center;
 }
@@ -164,9 +167,22 @@ div.body-width {
   width: 80vw;
 }
 
+div.add-note-wrapper {
+  margin-top: 15px;
+  min-width: 225px;
+}
+
 div.top-line-break {
   margin-top: 50px;
   border-top: 2px solid #0f4150;
   padding-top: 50px;
+}
+
+span.transparent {
+  color: rgba(255, 255, 255, 0);
+}
+
+.add-notes {
+  width: 59%;
 }
 /*# sourceMappingURL=main.css.map */
