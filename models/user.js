@@ -38,8 +38,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: {
-          args: [8, 99],
-          msg: "Password must be between 8 and 99 characters long."
+          args: [4, 99],
+          msg: "Password must be between 4 and 99 characters long."
         }
       }
     },

@@ -1,23 +1,47 @@
 # Genshin Impact Character Tracker
 A browser-based app for manually tracking your Genshin Impact characters and their stats, and for managing your in-game goals.
 
-The purpose of this project is to have all your character information stored online, which you can bookmark or keep open in a tab, and which takes less time to load than the actual game itself. You can also aggregate your goals in your dashboard so that you can see which daily domains are relevant to your characters' ascensions and weapon ascensions, as well as keep track of which artifacts you have and need for your characters. No need to flip through pages of crossed out notes anymore! 
+The purpose of this project is to have all your character information stored online, which you can bookmark or keep open in a tab, and which takes less time to load than the actual game itself. You can add, edit, and delete your goals or notes for each character in the dashboard view--no need to flip through pages of crossed-out notes anymore!
 
 ## Link to Live Project:
+https://genshin-impact.herokuapp.com/
 
 ## How to Setup After Cloning:
-1. Install node dependencies
-`npm i`
-2. Create a SQL database called "genshin_tracker" (Make sure that the config.json database name matches your database name.)
-`psql`
-`CREATE DATABASE genshin_tracker;`
-3. Migrate models
-`sequelize db:migrate`
-4. Run the API to populate the stockCharacter model.
-`node server_api.js`
-5. Run the code
-`node server.js` or `nodemon` (if you have nodemon installed)
-6. Go to your browser: localhost:3000
+1. Install node dependencies: 
+```npm install```
+- Install the Sequelize CLI if you don't have it already: `npm i sequelize-cli` or `npm i -g sequelize-cli` to install globally
+
+2. Create a SQL database called "genshin_tracker" (Make sure that the config.json database name matches your database name): `psql`, `CREATE DATABASE genshin_tracker;`
+3. Migrate models: `sequelize db:migrate`
+4. Run the API to populate the stockCharacter model: `node server_api.js`
+5. Run the code: `node server.js` or `nodemon` (if you have nodemon installed)
+6. Go to port 3000 in your browser: `localhost:3000`
+
+## Features
+- Sequelize hook to convert email address before validating 
+- Password hashing using bcrypt
+- Local login authentication using passport
+- Multi-select and search from a dynamic dropdown list when adding characters
+- Multi-select edit and delete character comments
+- Dynamic CSS: see what happens when you adjust your browser size 👀
+- Colored text dependent on each character's vision (element)
+
+## Technologies Used
+- HTML
+- CSS, Scss
+- JavaScript
+- Express
+- Node.js
+- EJS, EJS Layouts 
+- Bootstrap, Bootstrap-select
+- Axios (for API calls)
+- Passport (for user authentication)
+- Bcrypt (for password hashing)
+
+## Contact: 
+Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inquiries!
+
+--- 
 
 ## Project Planning:
 Entity Relationship Diagram: https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714
@@ -27,6 +51,35 @@ Inspiration:
 - https://www.gensh.in/
 - https://genshin.poporing.life/
 - https://www.genshingamer.com/
+
+## Timeline
+1/20/21 - Found and added Genshin custom font
+1/21/21 - Added background and EJS layout scss, 404 page
+1/23/21 - Minimized scope of project, added user model
+1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
+1/26/21 - Populated stockCharacter model with API (removed a process.exit() that was causing it to terminate prematurely), added bootstrap-select multi-select+search form for adding user's characters, incorporated ability to view all and delete myCharacters on the /characters page, aligned link formatting in the navigation bar.
+
+This night was my most stressful night of the GA SEI, because I was going crazy trying to figure out what about the code I just wrote was causing everything to break. Turns out, what was working before wasn't working anymore (I made the mistake of ruling it out from my mind), and prior, it was essentially luck that my poorly-written code wasn't breaking--I was redirecting back to the /characters page before my forEach was done running and adding all my new characters. 
+1/27/20 - Added multi-select form with user-specific character options to dashboard page, added ability to add comments/notes for each user's specific characters and have them show up on the dashboard page, grouped by character. Got stuck on this for a few hours because I didn't include the db.comment high enough when trying to findAll myCharacters.
+1/28/20 - Added ability to bulk edit or bulk delete comments from dashboard view. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.
+
+## Screenshots
+My Characters view:
+![My Character View](public/img/screenshots/My_Characters_2021-01-29.png)
+Character detail view:
+![Character Detail View](public/img/screenshots/Character_View_2021-01-29.png)
+My Goals view:
+![View Goals Screenshot](public/img/screenshots/My_Goals_2021-01-29.png)
+Add Goal view:
+![Add Goal Screenshot](public/img/screenshots/Add_Goal_2021-01-29.png)
+Edit Goals view:
+![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png)
+
+## Next Steps
+- Update Characters view 
+- Add ability to enter character stats (ATK, DEF, HP, etc.)
+- Add weapon slot and domain information 
+- Aggregate domain information on dashboard, depending on the day
 
 ## Background:
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
@@ -48,29 +101,7 @@ This app is my unit 2 project for General Assembly's Software Engineering Intens
 - Have semantically clean HTML, CSS, and back-end code
 - Be deployed online and accessible to the public
 
-The above is why the local database (stockCharacter) was seeded with an API (which took a while to calibrate) instead of manually populated.
-
-## Timeline
-1/20/21 - Found and added Genshin custom font
-1/21/21 - Added background and EJS layout scss, 404 page
-1/23/21 - Minimized scope of project, added user model
-1/25/21 - Added login authentication, password hashing, flash messages, navbar, character and goal models  
-1/26/21 - Populated stockCharacter model with API (removed a process.exit() that was causing it to terminate prematurely), added bootstrap-select multi-select+search form for adding user's characters, incorporated ability to view all and delete myCharacters on the /characters page, aligned link formatting in the navigation bar.
-
-This night was my most stressful night of the GA SEI, because I was going crazy trying to figure out what about the code I just wrote was causing everything to break. Turns out, what was working before wasn't working anymore (I made the mistake of ruling it out from my mind), and prior, it was essentially luck that my poorly-written code wasn't breaking--I was redirecting back to the /characters page before my forEach was done running and adding all my new characters. 
-
-1/27/20 - Added multi-select form with user-specific character options to dashboard page, added ability to add comments/notes for each user's specific characters and have them show up on the dashboard page, grouped by character. Got stuck on this for a few hours because I didn't include the db.comment high enough when trying to findAll myCharacters.
-1/28/20 - Added ability to bulk edit or bulk delete comments from dashboard view. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.
-
 ## Credit:
 Character information API: https://github.com/genshindev/api
 Background image: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0 
 
-# Features
-- Sequelize hook to convert email address before validating 
-- Password hashing using bcrypt
-- Local login authentication using passport
-- Multi-select and search from a dynamic dropdown list when adding characters
-- Multi-select edit and delete character comments
-- Dynamic CSS: see what happens when you adjust your browser size 👀
-- Colored text dependent on each character's vision (element)
