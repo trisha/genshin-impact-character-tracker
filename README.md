@@ -63,6 +63,8 @@ This night was my most stressful night of the GA SEI, because I was going crazy 
 1/28/20 - Added ability to bulk edit or bulk delete comments from dashboard view. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.
 
 ## Credit:
+Character information API: https://github.com/genshindev/api
+Background image: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0 
 
 # Features
 - Sequelize hook to convert email address before validating 

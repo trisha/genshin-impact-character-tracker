@@ -45,7 +45,7 @@ div.body {
 div.translucent {   
     background-color: $div-translucent-color;
     border-radius: 5px;
-    padding: 10px; // Sometimes this is making things off-center.
+    padding: 10px; // Sometimes this is making things off-center when resizing browser.
     text-align: center;
 }
 
@@ -65,7 +65,7 @@ h1 {
     font-size: 5vw;
 }
 .description-font {
-    
+
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow

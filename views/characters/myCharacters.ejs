@@ -24,9 +24,7 @@
     <form action='/characters/new' method='POST'>
         <label for="characters">Add Character(s):</label>
 
-        <%# How to create dynamic select form: https://stackoverflow.com/questions/42548641/how-to-get-value-selected-in-dropdown-menu-from-ejs-template-to-server-side-node %>
-        <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
-        
+        <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>        
         <select class="selectpicker" id="characters" name="characters" title="Search for or select characters." multiple data-live-search="true" data-actions-box="true" data-width="60%" required>
             <optgroup label="5 Star Characters">
                 <% stockCharacters.forEach(character => { %>

@@ -6,7 +6,7 @@
         <img src='/img/portraits/<%= char.name %>.png' class="flexible">
     </div>
 
-    <div class="flex-col translucent border-TL border-BL">
+    <div class="flex-col translucent border-TL border-BL"> <%# border-TL makes top-left corner sharp instead of rounded. %>
         
         <div class="align-left">
             <h1 class="<%= char.vision %> text-shadow big-font"><%= char.name %></h1> 
@@ -26,13 +26,5 @@
         </div>
         
     </div>
-
-    <%# Can do an API call to https://api.genshin.dev/characters/tartaglia and then 
-    
-    results.skillTalents.forEach(talent => {
-        talent.name
-        talent.description
-    })
-    %>
         
 </div>
