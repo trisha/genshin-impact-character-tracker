@@ -45,20 +45,10 @@
             <%# Bootstrap-select options: https://developer.snapappointments.com/bootstrap-select/examples/ %>
             <%# data-action-box adds 'Select All' and 'Deselect All' buttons. %>
             <select class="selectpicker" id="characters" name="myCharId" title="Search for or select one of your characters." data-live-search="true" data-actions-box="true" data-width="60%" required>
-                <optgroup label="5 Star Characters">
-                    <% myCharacters.forEach(character => { %>
-                        <% if (character.rarity == 5) { %>
-                            <option value="<%= character.id %>"> <%= character.name %> </option>
-                        <% } %>
-                    <% }) %>
-                </optgroup>
-                <optgroup label="4 Star Characters">
-                    <% myCharacters.forEach(character => { %>
-                        <% if (character.rarity == 4) { %>
-                            <option value="<%= character.id %>"> <%= character.name %> </option>
-                        <% } %>
-                    <% }) %>
-                </optgroup>
+                <% myCharacters.forEach(character => { %>
+                        <option value="<%= character.id %>"> <%= character.name %> </option>
+        
+                <% }) %>                
             </select>
         </div>
         <div class="add-note-wrapper">
