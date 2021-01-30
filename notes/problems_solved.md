@@ -67,5 +67,6 @@ See 'root/views/dashboard/dashboardView.ejs'
 ---
 
 Q: Express EJS how to have new lines show up
+Q: EJS convert \r into line breaks
 
 A: Add `style="white-space:pre-wrap"` to your tag. See 'root/views/dashboardView.ejs' for the goal.li (list item), or goal contents, to be displayed using this style tag.
