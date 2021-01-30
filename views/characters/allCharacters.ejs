@@ -1,5 +1,18 @@
 <h1>All Genshin Impact Characters</h1>
 
-<div class="translucent body-width">
-    Coming soon!
+<div class="translucent" style="width:80%">
+    <p class="dark-teal" style="font-size:20px;font-weight: bold;">Click on each character's image to learn more about them.</p>
+    <hr>
+    <ul class="characters-container">    
+    <% stockCharacters.forEach(character => { %>
+        <li>
+        <div class="character-tile flex-row">
+            <a href='/characters/view/<%= character.name %>'><img src='/img/headshots/<%= character.name.toLowerCase() %>.png' width='106px'></a>
+            <div class="flex-col">
+                <h3 class="<%= character.vision %>"><%= character.name %></h3>
+            </div>
+        </div>
+        </li>
+    <% }) %>
+    </ul>
 </div>

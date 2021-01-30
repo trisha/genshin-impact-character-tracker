@@ -23,12 +23,15 @@ router.get('/', isLoggedIn, (req, res) => {
     })
 })
 
+// Find all stockCharacters for the All Characters page.
 router.get('/all', (req, res) => {
-    res.render('characters/allCharacters.ejs')
-})
-
-router.get('/partial', (req, res) => {
-    res.render('partials/view.ejs')
+    db.stockCharacter.findAll({
+        order: [
+            ['name', 'ASC']
+        ]
+    }).then(stockCharacters => {
+        res.render('characters/allCharacters.ejs', {stockCharacters: stockCharacters})
+    })
 })
 
 // Add new character/s.

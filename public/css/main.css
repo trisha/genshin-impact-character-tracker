@@ -92,6 +92,7 @@ ul.characters-container {
 
 .character-tile {
   width: 300px;
+  margin-bottom: 15px;
 }
 
 .flex-row {

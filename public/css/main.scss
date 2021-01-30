@@ -103,6 +103,7 @@ ul.characters-container {
 }
 .character-tile {
     width: 300px; // Need to change this to be percentage based, 1/3 of characters-container.
+    margin-bottom: 15px;
 }
 .flex-row { // Used in characterDetail.ejs as well.
     display: flex;
