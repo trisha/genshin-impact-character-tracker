@@ -63,3 +63,9 @@ For sequelize calls, make sure to `include` any associated databases. For exampl
 In my EJS, I was able to refer to them as myCharacters.forEach(character => character.goals (array that I would also forEach through))
 
 See 'root/views/dashboard/dashboardView.ejs'
+
+---
+
+Q: Express EJS how to have new lines show up
+
+A: Add `style="white-space:pre-wrap"` to your tag. See 'root/views/dashboardView.ejs' for the goal.li (list item), or goal contents, to be displayed using this style tag.
