@@ -34,11 +34,11 @@ const findAndLogInUser = (email, password, doneCallback) => {
         }
         if (!foundUser) { // We have this in addition to .catch because this isn't an error, this is missing a user.
             console.log("🐸Email does not exist")
-            return doneCallback(null, false)
+            return doneCallback('noEmail', false)
         }
         if (!match) { // We have this in addition to .catch because this isn't an error, this is wrong credentials.
             console.log("🐸Password was NOT validated, i.e. match is false")
-            return doneCallback(null, false)
+            return doneCallback('noMatch', false) // 'noMatch' used to be null when I didn't have the different error scenarios.
         } else { // User was legit.
             return doneCallback(null, foundUser)
         }
