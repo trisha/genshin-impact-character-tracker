@@ -32,7 +32,11 @@ const findAndLogInUser = (email, password, doneCallback) => {
             // Check that the password matches.
             match = await foundUser.validPassword(password) // Calling our custom .validPassword method on user defined in ../models/user.js
         }
-        if (!foundUser || !match) { // We have this in addition to .catch because this isn't an error, this is missing a user/wrong credentials.
+        if (!foundUser) { // We have this in addition to .catch because this isn't an error, this is missing a user.
+            console.log("🐸Email does not exist")
+            return doneCallback(null, false)
+        }
+        if (!match) { // We have this in addition to .catch because this isn't an error, this is wrong credentials.
             console.log("🐸Password was NOT validated, i.e. match is false")
             return doneCallback(null, false)
         } else { // User was legit.

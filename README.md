@@ -22,7 +22,7 @@ Password: test
 6. Go to port 3000 in your browser: `localhost:3000`
 
 ## Features
-- Sequelize hook to convert email address before validating 
+- Sequelize hook to convert email address to lowercase before validating 
 - Password hashing using bcrypt
 - Local login authentication using passport
 - Multi-select and search from a dynamic dropdown list when adding characters
