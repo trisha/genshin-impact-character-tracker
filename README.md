@@ -6,6 +6,10 @@ The purpose of this project is to have all your character information stored onl
 ## Link to Live Project:
 https://genshin-impact.herokuapp.com/
 
+Test account:  
+Email: test@email.com  
+Password: test
+
 ## How to Setup After Cloning:
 1. Install node dependencies: 
 ```npm install```

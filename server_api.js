@@ -89,6 +89,7 @@ axios.get(charsEndpoint)
 })
 */
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Below code from Taylor is another way to have an async forEach
 // Inspired by this article: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
@@ -108,7 +109,7 @@ const getOneCharData = (charName) => {
 
 const insertChar = async (char) => {
     let charData = await getOneCharData(char)
-    db.stockCharacter.findOrCreate({
+    db.testStockCharacter.findOrCreate({
         where: {name: charData.name},
         defaults: {
             description: charData.description, 
@@ -132,6 +133,8 @@ axios.get(charsEndpoint)
     bulkInsertChar(chars.data)
 })
 */
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Below code wasn't working, there are 30 characters but only 29 ended up in the SQL table even after running the below twice. Same issue when removing async and await.
