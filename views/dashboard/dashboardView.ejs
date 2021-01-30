@@ -21,14 +21,14 @@
                 <% character.goals.forEach(goal => { %>  
                     <p><li class="<%= character.vision %> li-align-left">
                         <input class="form-check-input" type="checkbox" id="<%= goal.id %>" name="goalId" value="<%= goal.id %>" style="display:inline;">
-                        <label class="form-check-label" for="<%= goal.id %>"><%= goal.li %></label>
+                        <label class="form-check-label" for="<%= goal.id %>"><p><%- goal.li %></p></label>
                     </li></p>
                 <% }) %>
                 <% } %>
             </ul>
         </div>
         <% }) %>
-        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal</button>
+        <button type="submit" form="modifyGoals" formaction="/dashboard/goal/edit" name="button" value="edit" style="border-radius:5px;">Edit Selected Goal(s)</button>
         <button type="submit" form="modifyGoals" formaction="/dashboard/goal/delete/?_method=DELETE" name="button" value="delete" style="border-radius:5px;">Delete Selected Goal(s)</button>
     
     </form>

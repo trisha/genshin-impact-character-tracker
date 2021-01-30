@@ -49,20 +49,22 @@ router.post('/login', passport.authenticate('local', {
 
 // Replaced above code with code from Yasaman so I can return different error messages dependent on the situation.
 // Couldn't get code from Yasaman to work because I don't have a req.
-// router.post('/login', passport.authenticate('local', function(err, user, info) {
-//     if (err == "noEmail") {
-//         req.flash('error', 'Email not found, please try again (emails are NOT case sensitive) or create a new account!')
-//         return res.redirect('/auth/signup')
-//     } else if (err == "noMatch") {
-//         req.flash('error', "Email and password combination not a match.")
-//         return res.redirect('/auth/login')
-//     } else {
-//         req.logIn(user, function(err) {
-//             if (err) { return next(err) }
-//             return res.redirect('/dashboard')
-//         })
+// router.post('/login', (res, req) => {
+//     passport.authenticate('local', function(err, user, info) {
+//         if (err == "noEmail") {
+//             req.flash('error', 'Email not found, please try again (emails are NOT case sensitive) or create a new account!')
+//             return res.redirect('/auth/signup')
+//         } else if (err == "noMatch") {
+//             req.flash('error', "Email and password combination not a match.")
+//             return res.redirect('/auth/login')
+//         } else {
+//             req.logIn(user, function(err) {
+//                 if (err) { return next(err) }
+//                 return res.redirect('/dashboard')
+//             })
+//         }
 //     }
-// }))
+// )})
 
 router.get('/signup', (req, res) => {
     res.render('auth/signup.ejs')
