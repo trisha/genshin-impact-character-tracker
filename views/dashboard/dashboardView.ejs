@@ -21,7 +21,7 @@
                 <% character.goals.forEach(goal => { %>  
                     <p><li class="<%= character.vision %> li-align-left">
                         <input class="form-check-input" type="checkbox" id="<%= goal.id %>" name="goalId" value="<%= goal.id %>" style="display:inline;">
-                        <label class="form-check-label" for="<%= goal.id %>"><p><%- goal.li %></p></label>
+                        <label class="form-check-label" for="<%= goal.id %>"><p style="white-space:pre-wrap"><%= goal.li %></p></label>
                     </li></p>
                 <% }) %>
                 <% } %>

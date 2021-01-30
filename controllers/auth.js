@@ -48,7 +48,6 @@ router.get('/login', (req, res) => {
 // })) 
 
 // Replaced above code with code from Yasaman so I can return different error messages dependent on the situation.
-// Couldn't get code from Yasaman to work because I don't have a req.
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', function(err, user, info) {
         if (err == "noEmail") {
