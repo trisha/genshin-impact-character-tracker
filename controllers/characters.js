@@ -82,6 +82,24 @@ router.delete('/delete/:idx', (req, res) => {
     })
 })
 
+// API is down....
+// const axios = require('axios')
+// router.get('/view/:name', (req, res) => {
+//     db.stockCharacter.findOne({
+//         where: {
+//             name: req.params.name
+//         }
+//     }).then(character => {
+//         let endpoint = `https://api.genshin.dev/characters/${character.name}`
+//         axios.get(endpoint) // Returns info on ea char.
+//     .then(response => {
+//         let talents = response.data.skillTalents
+//         res.render('characters/characterDetail.ejs', {char: character, talents: talents})    
+//     })    
+//     })
+// })
+
+
 const axios = require('axios')
 router.get('/view/:name', (req, res) => {
     db.stockCharacter.findOne({
@@ -89,14 +107,16 @@ router.get('/view/:name', (req, res) => {
             name: req.params.name
         }
     }).then(character => {
-        let endpoint = `https://api.genshin.dev/characters/${character.name}`
-        axios.get(endpoint) // Returns info on ea char.
-    .then(response => {
-        let talents = response.data.skillTalents
-        res.render('characters/characterDetail.ejs', {char: character, talents: talents})    
-    })    
+        res.render('characters/characterDetail.ejs', {char: character})    
     })
 })
 
-
 module.exports = router
+
+// API is down.... Below code was .ejs for characterDetail.ejs
+/* <p style="max-width: 500px;">
+                <h5 class="<%= char.vision %>">Talents:</h5>
+            <ul><% talents.forEach(talent => { %>
+                <li><%= talent.name %></li>
+            <% }) %></ul>
+            </p> */
