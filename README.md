@@ -65,6 +65,7 @@ Inspiration:
 
 ## Timeline
 Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress timeline. 
+
 1/20/21 - Found and added Genshin custom font
 
 1/21/21 - Added background and EJS layout scss, 404 page  
@@ -78,6 +79,11 @@ Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress
 1/27/20 - Added multi-select form with user's characters to dashboard page, added ability to add comments/notes for each character, and display them grouped by character
 
 1/28/20 - Added ability to bulk edit or bulk delete comments using the same form. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.  
+
+
+-- Project Submissions; anything beyond this is outside of class. --
+
+1/30/20 - Have white spaces and  new lines in character notes show up in display view.
 
 ## Screenshots
 My Characters view:
