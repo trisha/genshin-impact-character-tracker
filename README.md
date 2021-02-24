@@ -57,6 +57,7 @@ Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inqui
 Entity Relationship Diagram: https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714
 
 Wireframes: https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1
+
 Inspiration: 
 - https://genshin.gg/
 - https://www.gensh.in/
@@ -79,9 +80,6 @@ Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress
 1/27/20 - Added multi-select form with user's characters to dashboard page, added ability to add comments/notes for each character, and display them grouped by character
 
 1/28/20 - Added ability to bulk edit or bulk delete comments using the same form. Refactored 'add new character' multi-select search form to be based on stockCharacters, instead of having hard-coded dropdown values.  
-
-
--- Project Submissions; anything beyond this is outside of class. --
 
 1/30/20 - Have white spaces and  new lines in character notes show up in display view.
 
@@ -107,7 +105,7 @@ And I'll forget which specific artifacts I'm farming for each character (in orde
 This app arose from the intersection of the pain points above, and the exigence below. 
 
 ## Exigence: 
-This app is my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) include:  
+This app spun out of my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) included:  
 - Have at least 2 models (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.  
 - Include sign up/log in functionality, with hashed passwords & an authorization flow
 - Incorporate at least one API. Examples include Yelp, Tumblr, Facebook, and others on Mashape. Maybe grab an API from this list of free APIs
