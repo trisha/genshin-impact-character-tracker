@@ -43,6 +43,9 @@ Password: test
 - Bcrypt (for password hashing)
 
 ## Next Steps
+- Add confirmation modal when deleting character.
+- Have 'add new note' more visible (instead of at bottom), perhaps on side
+- Have Edit and Delete note buttons more visible, perhaps as a float
 - Update Characters view  to match Figma wireframes
 - Add ability to enter character stats (ATK, DEF, HP, etc.)  
 - Add weapon slot and domain information 
@@ -118,3 +121,14 @@ This app spun out of my unit 2 project for General Assembly's Software Engineeri
 ## Credit:
 Character information API: https://github.com/genshindev/api  
 Background image: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0 
+
+
+<!-- 3/8/21 Feedback from Dave:
+x Remove mention of bcrypt on homepage.
+- Add 'stroke' for geo text, since hard to read.
+x Have images open in new tab.
+- Confirm password when signing up.
+- Add profile page (instead of 404 not found).
+- Have Delete button display a 'Confirm Delete' and 'Cancel' button show up. 
+- Issue when adding all characters at once: font color doesn't show up, everything is white.
+ -->
