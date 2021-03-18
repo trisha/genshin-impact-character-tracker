@@ -10,17 +10,6 @@ Test account:
 Email: test@email.com  
 Password: test
 
-## How to Setup After Cloning:
-1. Install node dependencies: 
-```npm install```
-- Install the Sequelize CLI if you don't have it already: `npm i sequelize-cli` or `npm i -g sequelize-cli` to install globally
-
-2. Create a SQL database called "genshin_tracker" (Make sure that the config.json database name matches your database name): `psql`, `CREATE DATABASE genshin_tracker;`
-3. Migrate models: `sequelize db:migrate`
-4. Run the API to populate the stockCharacter model: `node server_api.js`
-5. Run the code: `node server.js` or `nodemon` (if you have nodemon installed)
-6. Go to port 3000 in your browser: `localhost:3000`
-
 ## Features
 - Sequelize hook to convert email address to lowercase before validating 
 - Password hashing using bcrypt
@@ -69,6 +58,31 @@ Inspiration:
 - https://genshin.poporing.life/
 - https://www.genshingamer.com/
 
+## Screenshots
+My Characters view:
+![My Character View](public/img/screenshots/My_Characters_2021-01-29.png)
+Character detail view:
+![Character Detail View](public/img/screenshots/Character_View_2021-01-29.png)
+My Goals view:
+![View Goals Screenshot](public/img/screenshots/My_Goals_2021-01-29.png)
+Add Goal view:
+![Add Goal Screenshot](public/img/screenshots/Add_Goal_2021-01-29.png)
+Edit Goals view:
+![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png) 
+
+
+## How to Setup After Cloning:
+1. Install node dependencies: 
+```npm install```
+- Install the Sequelize CLI if you don't have it already: `npm i sequelize-cli` or `npm i -g sequelize-cli` to install globally
+
+2. Create a SQL database called "genshin_tracker" (Make sure that the config.json database name matches your database name): `psql`, `CREATE DATABASE genshin_tracker;`
+3. Migrate models: `sequelize db:migrate`
+4. Run the API to populate the stockCharacter model: `node server_api.js`
+5. Run the code: `node server.js` or `nodemon` (if you have nodemon installed)
+6. Go to port 3000 in your browser: `localhost:3000`
+
+
 ## Timeline
 Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress timeline. 
 
@@ -88,17 +102,7 @@ Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress
 
 1/30/20 - Have white spaces and  new lines in character notes show up in display view.
 
-## Screenshots
-My Characters view:
-![My Character View](public/img/screenshots/My_Characters_2021-01-29.png)
-Character detail view:
-![Character Detail View](public/img/screenshots/Character_View_2021-01-29.png)
-My Goals view:
-![View Goals Screenshot](public/img/screenshots/My_Goals_2021-01-29.png)
-Add Goal view:
-![Add Goal Screenshot](public/img/screenshots/Add_Goal_2021-01-29.png)
-Edit Goals view:
-![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png) 
+
 
 ## Background:
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
