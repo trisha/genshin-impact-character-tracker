@@ -50,7 +50,7 @@ Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inqui
 ![Lucidchart ERD Screenshot](public/img/screenshots/ERD.png)
 
 [Wireframes:](https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1)
-![Figma Wireframes Screenshot](public/img/screenshots/Wirefames.png)
+![Figma Wireframes Screenshot](public/img/screenshots/Wireframes.png)
 
 Inspiration: 
 - https://genshin.gg/
