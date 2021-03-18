@@ -3,7 +3,7 @@ A browser-based app for manually tracking your Genshin Impact characters and the
 
 The purpose of this project is to have all your character information stored online, which you can bookmark or keep open in a tab, and which takes less time to load than the actual game itself. You can add, edit, and delete your goals or notes for each character in the dashboard view--no need to flip through pages of crossed-out notes anymore!
 
-## Link to Live Project:
+## Link to Live Project
 https://genshin-impact.herokuapp.com/
 
 Test account:  
@@ -40,12 +40,12 @@ Password: test
 - Add weapon slot and domain information 
 - Aggregate domain information on dashboard, depending on the day 
 
-## Contact: 
+## Contact 
 Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inquiries!
 
 --- 
 
-## Project Planning:
+## Project Planning
 [Entity Relationship Diagram:](https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714)
 ![Lucidchart ERD Screenshot](public/img/screenshots/ERD.png)
 
@@ -71,7 +71,7 @@ Edit Goals view:
 ![Edit Goals Screenshot](public/img/screenshots/Edit_Goals_2021-01-29.png) 
 
 
-## How to Setup After Cloning:
+## How to Setup After Cloning
 1. Install node dependencies: 
 ```npm install```
 - Install the Sequelize CLI if you don't have it already: `npm i sequelize-cli` or `npm i -g sequelize-cli` to install globally
@@ -104,7 +104,7 @@ Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress
 
 
 
-## Background:
+## Background
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
 
 I also keep forgetting if I can use my resin (i.e. Genshion's stamina currency) on artifacts, or whether I should use them on today's ascension domains. 
@@ -113,7 +113,7 @@ And I'll forget which specific artifacts I'm farming for each character (in orde
 
 This app arose from the intersection of the pain points above, and the exigence below. 
 
-## Credit:
+## Credit
 Character information API: https://github.com/genshindev/api  
 Background image: https://www.gensh.in/gallery/wallpaper#lg=1&slide=0 
 
