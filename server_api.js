@@ -91,7 +91,7 @@ axios.get(charsEndpoint)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Below code from Taylor is another way to have an async forEach
+// Below uses an async forEach. Code is also in the server_api_async.js file.
 // Inspired by this article: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
 /* 
 const asyncForEach = async (array, callback) => {
