@@ -1,6 +1,6 @@
 <h1>My Goals</h1>
 
-<%# START OF MULTISELECT DELETE SELECTED GOALS. %>
+<%# START OF MULTISELECT MODIFY SELECTED GOALS. %>
 <div class="translucent dashboard">
     <% if (!myCharacters || myCharacters.length <= 0) { %>
         <div style="margin:50px;">
@@ -32,7 +32,7 @@
         <button type="submit" form="modifyGoals" formaction="/dashboard/goal/delete/?_method=DELETE" name="button" value="delete" style="border-radius:5px;">Delete Selected Goal(s)</button>
     
     </form>
-<%# END OF MULTISELECT DELETE GOALS.%>
+<%# END OF MULTISELECT MODIFY GOALS.%>
 <%# Need to add modal/popup for delete confirmation: %>
 <%# https://stackoverflow.com/questions/46767664/simple-express-ejs-modal %>
 
