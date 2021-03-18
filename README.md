@@ -57,9 +57,11 @@ Reach out to Trisha at genshin.character.tracker@gmail.com for comments or inqui
 --- 
 
 ## Project Planning:
-Entity Relationship Diagram: https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714
+[Entity Relationship Diagram:](https://lucid.app/lucidchart/invitations/accept/18a984d6-26ce-4ce0-a51e-ee6e22bc8714)
+![Lucidchart ERD Screenshot](public/img/screenshots/ERD.png)
 
-Wireframes: https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1
+[Wireframes:](https://www.figma.com/file/YYpdBfzQkJaAiz9c5pFhUF/Genshin-Character-Tracker-Wireframes?node-id=0%3A1)
+![Figma Wireframes Screenshot](public/img/screenshots/Wirefames.png)
 
 Inspiration: 
 - https://genshin.gg/
@@ -106,17 +108,6 @@ I also keep forgetting if I can use my resin (i.e. Genshion's stamina currency) 
 And I'll forget which specific artifacts I'm farming for each character (in order to fulfill artifact set bonuses): Whenever I see my domain drops, I have to find my physical list of artifacts so I can know whether I'm done running a domain or whether I should continue to do another run.
 
 This app arose from the intersection of the pain points above, and the exigence below. 
-
-## Exigence: 
-This app spun out of my unit 2 project for General Assembly's Software Engineering Intensive (GA SEI). [Requirements](https://github.com/patricia-pan/project2_ideas) included:  
-- Have at least 2 models (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.  
-- Include sign up/log in functionality, with hashed passwords & an authorization flow
-- Incorporate at least one API. Examples include Yelp, Tumblr, Facebook, and others on Mashape. Maybe grab an API from this list of free APIs
-- Have complete RESTful routes for at least one of your resources with GET, POST, PUT, and DELETE
-- Utilize an ORM to create a database table structure and interact with your relationally-stored data
-- Include a readme file that explains how to use your app
-- Have semantically clean HTML, CSS, and back-end code
-- Be deployed online and accessible to the public
 
 ## Credit:
 Character information API: https://github.com/genshindev/api  
