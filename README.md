@@ -107,7 +107,7 @@ Click [here](notes/timeline.md) (notes/timeline.md) for a more detailed progress
 ## Background
 Whenever I talk about anything related to my characters in Genshin Impact on Reddit or with my friends--such as character builds or team compositions--I find that I oftentimes have to open the game just to see what my character's stats are, the name and level of their weapon they're using, or which artifacts (plus their main- and sub- stats) they have equipped. 
 
-I also keep forgetting if I can use my resin (i.e. Genshion's stamina currency) on artifacts, or whether I should use them on today's ascension domains. 
+I also keep forgetting if I can use my resin (i.e. Genshin's stamina currency) on artifacts, or whether I should use them on today's ascension domains. 
 
 And I'll forget which specific artifacts I'm farming for each character (in order to fulfill artifact set bonuses): Whenever I see my domain drops, I have to find my physical list of artifacts so I can know whether I'm done running a domain or whether I should continue to do another run.
 
